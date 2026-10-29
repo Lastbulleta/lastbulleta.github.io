@@ -1,4 +1,4 @@
-const CACHE_NAME = "athar-cache-v2";
+const CACHE_NAME = "athar-cache-v3";
 const QCF_CACHE = "wirdi-qcf";   // mushaf page fonts: kept across app updates, so pages read once work offline
 const APP_SHELL = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./badge-96.png", "./fonts/UthmanicHafs.woff2"];
 
@@ -27,17 +27,19 @@ self.addEventListener("activate", function(event) {
 // up and the user hasn't opened the app today (after `hour`), show ONE gentle reminder for the day.
 function arDigits(n) { return String(n).replace(/\d/g, function(d) { return "٠١٢٣٤٥٦٧٨٩"[d]; }); }
 function dayKey(d) { return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
-// Dua reminder for Amira Hamed Abdel-Fattah (alive): twice a day (10:00, 21:00); the other hours 8:00–23:00
+// Dua reminder for Saadia Amin Mehanna (deceased, may Allah have mercy on her): twice a day (10:00, 21:00); the other hours 8:00–23:00
 // a dhikr / salah upon the Prophet ﷺ (same lists as the page, at most once an hour).
 var DUA_AMIRA = [
-  "اللهم احفظها بحفظك، وبارك في عمرها وصحتها، وألبسها ثوب العافية",
-  "اللهم اشفها وعافها، واجعل القرآن ربيع قلبها ونور صدرها",
-  "اللهم ارزقها السعادة في الدنيا والآخرة، وتقبّل منها صالح الأعمال",
-  "اللهم اغفر لها وارحمها، وأطل عمرها في طاعتك، وأحسن خاتمتها",
-  "اللهم اجعل هذا التطبيق في ميزان حسناتها، وأجرًا لا ينقطع لها",
-  "اللهم أسعد قلبها، واقضِ حوائجها، واكفها ما أهمّها",
+  "اللهم اغفر لها وارحمها، وعافها واعفُ عنها، وأكرم نُزُلها، ووسّع مُدخَلها",
+  "اللهم اغسلها بالماء والثلج والبَرَد، ونقّها من الخطايا كما يُنقّى الثوب الأبيض من الدنس",
+  "اللهم أبدلها دارًا خيرًا من دارها، وأدخلها الجنة، وأعذها من عذاب القبر ومن عذاب النار",
+  "اللهم اجعل قبرها روضة من رياض الجنة، ونوّر لها فيه، وافسح لها فيه مدّ بصرها",
+  "اللهم اجعل هذا التطبيق صدقة جارية عنها، وأجرًا لا ينقطع، ونورًا لها في قبرها",
+  "اللهم ارحمها تحت الأرض، ويوم العرض عليك، واجمعها بأحبّتها في الفردوس الأعلى",
+  "اللهم ثبّتها عند السؤال، وآنس وحشتها، وارحم غربتها",
   "اللهم ارزقها الفردوس الأعلى من الجنة بغير حساب ولا سابقة عذاب",
-  "اللهم بارك لها في رزقها وأهلها، واجعلها من أهل القرآن"
+  "اللهم اجعل كل حرف يُقرأ في هذا التطبيق في ميزان حسناتها",
+  "اللهم اغفر لحيّنا وميّتنا، وارحمها وجميع موتى المسلمين"
 ];
 var DHIKR = [
   ["صلِّ على محمد ﷺ", "اللهم صلِّ وسلم على نبينا محمد — «من صلى عليَّ واحدة صلى الله عليه عشرًا» (مسلم ٤٠٨)"],
@@ -54,7 +56,7 @@ function duaCheck(c, m) {
   if (!dua && !dhikr) return Promise.resolve();
   m.duaAt = now;
   return c.put("meta.json", new Response(JSON.stringify(m), { headers: { "Content-Type": "application/json" } })).then(function() {
-    if (dua) return self.registration.showNotification("🤍 لا تنسَ الدعاء لأميرة حامد عبد الفتاح", { body: DUA_AMIRA[hour % DUA_AMIRA.length], icon: "icon-192.png", badge: "badge-96.png", tag: "dua-amira", lang: "ar", dir: "rtl", data: { url: "./" } });
+    if (dua) return self.registration.showNotification("🤍 لا تنسَ الدعاء لسعدية أمين مهنى رحمها الله", { body: DUA_AMIRA[hour % DUA_AMIRA.length], icon: "icon-192.png", badge: "badge-96.png", tag: "dua-amira", lang: "ar", dir: "rtl", data: { url: "./" } });
     var d = DHIKR[hour % DHIKR.length];
     return self.registration.showNotification("📿 " + d[0], { body: d[1], icon: "icon-192.png", badge: "badge-96.png", tag: "dhikr-hourly", lang: "ar", dir: "rtl", data: { url: "./" } });
   });
