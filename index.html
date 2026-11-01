@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-9h1PJN4zVO1FT480DFTNwYa5F70EwBX+4fMtiwjnh2w='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-TnzjgicHEcmQmeX4qMC58FCF7jwGOFGMEUoec/zIJcE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>أَثَر - القرآن الكريم والأذكار</title>
@@ -1024,6 +1024,8 @@
   .sh-or{margin:14px 0 8px; font-size:.8rem; color:var(--ink-soft);}
 
 /*/WIRDI4-CSS*/
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
   html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
@@ -7132,11 +7134,10 @@ const EVENING_ADHKAR = [
       top += cardH + 50;
       if (o.foot){ g.font = "700 44px " + AF; g.fillStyle = "#fff"; shWrap(g, o.foot, W - 200).slice(0, 2).forEach(function(l, i){ g.fillText(l, W / 2, top + 30 + i * 62); }); }
       // the app
-      var by = H - 250;
+      var by = H - 210;
       if (ic){ g.save(); shRound(g, W / 2 - 60, by - 190, 120, 120, 30); g.clip(); g.drawImage(ic, W / 2 - 60, by - 190, 120, 120); g.restore(); }
       g.fillStyle = "#fff"; g.font = "700 72px " + AF; g.fillText(document.title.split(" - ")[0], W / 2, by + 10);
       g.font = "400 34px " + UF; g.fillStyle = "rgba(255,255,255,.85)"; g.fillText(SH_LINE, W / 2, by + 85);
-      g.font = "700 32px " + UF; g.fillStyle = "rgba(255,255,255,.7)"; g.direction = "ltr"; g.fillText(location.host + location.pathname.replace(/\/$/, ""), W / 2, by + 140);
       return c;
     });
   }
@@ -7339,7 +7340,7 @@ const EVENING_ADHKAR = [
   setInterval(function(){ ptRefresh(); checkPrayerReminders(); }, 30000);
   // Android keeps the app alive in the background, so a new deploy only shows after a real restart:
   // on coming back, ask the site for its build stamp and reload if it is newer (never mid-recitation)
-  var WIRDI_BUILD = "359144a239f4", verChecked = 0;
+  var WIRDI_BUILD = "bb624aa2903d", verChecked = 0;
   function wirdiAudioBusy(){
     var list = [].slice.call(document.querySelectorAll("audio"));
     if (typeof quranPlayers !== "undefined") list = list.concat(quranPlayers);
@@ -9141,12 +9142,12 @@ const EVENING_ADHKAR = [
   // Under her card: his name, a dua for the living (the Quran's duas for parents and duas for health, a long life in
   // obedience and a good end) and «آمين», counted on this phone apart from hers.
   var DUA_DAD = [
-    "﴿ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا ﴾ [الإسراء: ٢٤]",
+    "﴿ رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا ﴾ [الإسراء: ٢٤]",
     "اللهم احفظه بحفظك، واكلأه برعايتك، وأطِل عمره في طاعتك",
-    "﴿ رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ ﴾ [إبراهيم: ٤١]",
+    "﴿ رَبَّنَا ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِلۡمُؤۡمِنِينَ يَوۡمَ يَقُومُ ٱلۡحِسَابُ ﴾ [إبراهيم: ٤١]",
     "اللهم ألبسه ثوب الصحة والعافية، واشفه شفاءً لا يغادر سقمًا",
     "اللهم بارك له في عمره وصحته ورزقه، وأقرّ عينه بأولاده وأحبّته",
-    "﴿ رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ﴾ [نوح: ٢٨]",
+    "﴿ رَّبِّ ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِمَن دَخَلَ بَيۡتِيَ مُؤۡمِنٗا وَلِلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِۖ ﴾ [نوح: ٢٨]",
     "اللهم متّعه بسمعه وبصره وقوّته ما أحييته، ولا تُحوجه لأحد سواك",
     "اللهم اشرح صدره، وأسعد قلبه، وفرّج همّه، واقضِ حاجته",
     "اللهم اجعله من أهل القرآن الذين هم أهلك وخاصّتك",
