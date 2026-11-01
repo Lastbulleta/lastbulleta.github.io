@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-TnzjgicHEcmQmeX4qMC58FCF7jwGOFGMEUoec/zIJcE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-9JuFTz/ErfiPpd0hHwXsjoEp7HZanDhtKNKdcDDGv8s='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>أَثَر - القرآن الكريم والأذكار</title>
@@ -1024,6 +1024,8 @@
   .sh-or{margin:14px 0 8px; font-size:.8rem; color:var(--ink-soft);}
 
 /*/WIRDI4-CSS*/
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
   html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
@@ -7077,7 +7079,6 @@ const EVENING_ADHKAR = [
   function shCopy(txt, msg){
     return (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){ if (msg) showToast(msg); }, function(){ if (msg) showToast("تعذر النسخ على الجهاز ده"); });
   }
-  function shLink(){ return "https://" + location.host + location.pathname; }
   // plain text → { body, ref, quran }: a last line that is a source («﴿ البقرة: ٢ ﴾», «— البخاري», «[…]») goes under the words
   function shParse(txt){
     var lines = String(txt).split("\n").map(function(l){ return l.trim(); }).filter(Boolean), ref = "";
@@ -7164,7 +7165,7 @@ const EVENING_ADHKAR = [
       var k = b.getAttribute("data-sh"), t = encodeURIComponent(txt);
       if (k === "img" || k === "save"){ if (canvas) shPicture(canvas, k === "save", txt); return; }
       if (k === "wa") shOpen("https://api.whatsapp.com/send?text=" + t);
-      else if (k === "tg") shOpen("https://t.me/share/url?url=" + encodeURIComponent(shLink()) + "&text=" + t);
+      else if (k === "tg") shOpen("https://t.me/share/url?url=" + t);   // the words only — no web address
       else if (k === "copy") shCopy(txt, "اتنسخ ✓");
       ptSheetClose();
     });
@@ -7340,7 +7341,7 @@ const EVENING_ADHKAR = [
   setInterval(function(){ ptRefresh(); checkPrayerReminders(); }, 30000);
   // Android keeps the app alive in the background, so a new deploy only shows after a real restart:
   // on coming back, ask the site for its build stamp and reload if it is newer (never mid-recitation)
-  var WIRDI_BUILD = "bb624aa2903d", verChecked = 0;
+  var WIRDI_BUILD = "1c638f0b5a1e", verChecked = 0;
   function wirdiAudioBusy(){
     var list = [].slice.call(document.querySelectorAll("audio"));
     if (typeof quranPlayers !== "undefined") list = list.concat(quranPlayers);
