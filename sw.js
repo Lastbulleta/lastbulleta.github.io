@@ -235,9 +235,9 @@ function duaCheck(c, m) {
   if (!dua && !dhikr) return Promise.resolve();
   m.duaAt = now;
   return c.put("meta.json", new Response(JSON.stringify(m), { headers: { "Content-Type": "application/json" } })).then(function() {
-    if (dua) return self.registration.showNotification("🤍 لا تنسَ الدعاء لسعدية أمين مهنى رحمها الله", { body: DUA_AMIRA[hour % DUA_AMIRA.length], icon: "icon-192.png", badge: "badge-96.png", tag: "dua-amira", lang: "ar", dir: "rtl", data: { url: "./" } });
+    if (dua) return self.registration.showNotification("🤍 لا تنسَ الدعاء لسعدية أمين مهنى رحمها الله", { body: DUA_AMIRA[hour % DUA_AMIRA.length], icon: "icon-192.png", badge: "badge-96.png", tag: "dua-amira", lang: "ar", dir: "rtl", data: { url: "./", share: { b: DUA_AMIRA[hour % DUA_AMIRA.length] } } });
     var d = DHIKR[hour % DHIKR.length];
-    return self.registration.showNotification("📿 " + d[0], { body: d[1], icon: "icon-192.png", badge: "badge-96.png", tag: "dhikr-hourly", lang: "ar", dir: "rtl", data: { url: "./" } });
+    return self.registration.showNotification("📿 " + d[0], { body: d[1], icon: "icon-192.png", badge: "badge-96.png", tag: "dhikr-hourly", lang: "ar", dir: "rtl", data: { url: "./", share: { b: d[1] } } });
   });
 }
 function dailyCheck() {
@@ -274,9 +274,13 @@ self.addEventListener("periodicsync", function(event) {
 });
 self.addEventListener("notificationclick", function(event) {
   event.notification.close();
+  // a dhikr / dua / Sunnah reminder opens its share screen (share.js notifShare)
+  var data = event.notification.data || {}, share = data.share && data.share.b ? { t: data.share.t || event.notification.title, b: data.share.b } : null;
   event.waitUntil(self.clients.matchAll({ type: "window", includeUncontrolled: true }).then(function(list) {
-    for (var i = 0; i < list.length; i++) { if ("focus" in list[i]) return list[i].focus(); }
-    return self.clients.openWindow((event.notification.data && event.notification.data.url) || "./");
+    for (var i = 0; i < list.length; i++) {
+      if ("focus" in list[i]) { if (share) list[i].postMessage({ wnShare: share }); return list[i].focus(); }
+    }
+    return self.clients.openWindow((data.url || "./") + (share ? "#wnshare=" + encodeURIComponent(JSON.stringify(share)) : ""));
   }));
 });
 

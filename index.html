@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-0AyTFedszJcbA2N6DOCSkmtSGE98EViUD/kKrsrgfqA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-7zq0CNXIycJH51wKk0499KNATbIp4h0cvVOh+1PrvKA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>أَثَر - القرآن الكريم والأذكار</title>
@@ -1024,6 +1024,8 @@
   .sh-or{margin:14px 0 8px; font-size:.8rem; color:var(--ink-soft);}
 
 /*/WIRDI4-CSS*/
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
   html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
@@ -7192,12 +7194,35 @@ const EVENING_ADHKAR = [
     });
   }
 
+  // ---- a reminder notification tapped (a dhikr, a dua, a Sunnah…) → its words on the share screen ----
+  function notifShare(title, body){
+    title = String(title || ""); body = String(body || "");
+    if (!body) return;
+    var kick = title.replace(/^🤍 لا تنسَ الدعاء ل/, "🤲 ادعُ ل"), ref = "", text = body;
+    var p = body.match(/^🌿 ([^:]+): «([\s\S]+)» — (.+)$/);            // a prayer's Sunnah: «🌿 name: «words» — source»
+    var r = body.match(/^([\s\S]*?)\s*\[([^\[\]]+)\]$/);             // a dua with its source in [ ]
+    if (p){ kick = "🌿 " + p[1]; text = p[2]; ref = p[3]; }
+    else if (r){ text = r[1]; ref = r[2]; }
+    var dua = kick !== title || /دعاء|ادعُ/.test(title);
+    shareSheet(kick + "\n\n" + body + (dua ? "\n\nاللهم آمين 🤍" : ""), { kicker: kick, body: text, ref: ref, quran: /[ۡۖۚ]/.test(text), foot: dua ? "اللهم آمين 🤍" : "" });
+  }
+  (function(){
+    // web: sw.js sends the words to the open page, or opens the page with them after #wnshare=
+    try { if ("serviceWorker" in navigator) navigator.serviceWorker.addEventListener("message", function(e){ var d = e.data; if (d && d.wnShare) setTimeout(function(){ notifShare(d.wnShare.t, d.wnShare.b); }, 300); }); } catch(e){}
+    var h = location.hash.match(/^#wnshare=(.+)$/);
+    if (h) try {
+      var d = JSON.parse(decodeURIComponent(h[1]));
+      history.replaceState(history.state, "", location.pathname + location.search);
+      setTimeout(function(){ notifShare(d.t, d.b); }, 1500);
+    } catch(e){}
+  })();
+
   // ---------------- Home (v4): greeting by time of day, prayer times card, prayer-sunnah reminders ----------------
   // Notifications: on Android Chrome `new Notification()` throws ("use ServiceWorkerRegistration.showNotification"),
   // so every notification in the app goes through the service worker when one is available.
   function wirdiNotify(title, body, tag){
     if (!("Notification" in window) || Notification.permission !== "granted") return;
-    var opts = { body: body, icon: "icon-192.png", badge: "badge-96.png", lang: "ar", dir: "rtl", tag: tag || undefined, data: { url: "./" } };
+    var opts = { body: body, icon: "icon-192.png", badge: "badge-96.png", lang: "ar", dir: "rtl", tag: tag || undefined, data: { url: "./", share: body && /^(dua|dhikr|prayer)/.test(tag || "") ? { t: title, b: body } : null } };
     if ("serviceWorker" in navigator){
       navigator.serviceWorker.ready.then(function(reg){ return reg.showNotification(title, opts); })
         .catch(function(){ try { new Notification(title, opts); } catch(e){} });
@@ -7345,7 +7370,7 @@ const EVENING_ADHKAR = [
   setInterval(function(){ ptRefresh(); checkPrayerReminders(); }, 30000);
   // Android keeps the app alive in the background, so a new deploy only shows after a real restart:
   // on coming back, ask the site for its build stamp and reload if it is newer (never mid-recitation)
-  var WIRDI_BUILD = "694e6a7940ed", verChecked = 0;
+  var WIRDI_BUILD = "98fe930099df", verChecked = 0;
   function wirdiAudioBusy(){
     var list = [].slice.call(document.querySelectorAll("audio"));
     if (typeof quranPlayers !== "undefined") list = list.concat(quranPlayers);
@@ -9911,6 +9936,11 @@ const EVENING_ADHKAR = [
       if (id >= 6000 && id < 6100) setTimeout(function(){ if (typeof showView === "function") showView("home"); openGift(); }, 600);
       // the Friday al-Kahf reminders (places 1 and 3 of fridayNotes) open the surah
       if (id >= 7000 && id < 7100 && (id % 10 === 1 || id % 10 === 3) && typeof fridayOpenKahf === "function") setTimeout(fridayOpenKahf, 600);
+      // a prayer's Sunnah (1000s), the dua (3000s), the hourly dhikr (5000s), Friday / fasting (7000s, not al-Kahf) and the
+      // Friday salah upon the Prophet ﷺ (8000s) open their share screen
+      var n = (e && e.notification) || {};
+      if (n.body && ((id >= 1000 && id < 1100) || (id >= 3000 && id < 3800) || (id >= 5000 && id < 5800) || (id >= 8000 && id < 9000) || (id >= 7000 && id < 7100 && id % 10 !== 1 && id % 10 !== 3)))
+        setTimeout(function(){ notifShare(n.title, n.body); }, 700);
     }); } catch(e){}
     var perm = "default";
     function readPerm(){ return LN.checkPermissions().then(function(r){ perm = r.display === "granted" ? "granted" : (r.display === "denied" ? "denied" : "default"); return perm; }); }
