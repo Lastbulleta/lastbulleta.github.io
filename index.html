@@ -2,9 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-GbjwQqYV9BLQvnK6cFFAfcH2qyq09ebxbXI0V3BT4UU='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-9h1PJN4zVO1FT480DFTNwYa5F70EwBX+4fMtiwjnh2w='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>أَثَر - القرآن الكريم والأذكار</title>
 <meta name="theme-color" content="#9C4F86">
 <meta name="mobile-web-app-capable" content="yes">
@@ -241,7 +241,7 @@
   .bottom-bar{
     position:fixed; left:0; right:0; bottom:0; z-index:15;
     background:var(--paper-2); border-top:1px solid var(--paper-3);
-    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    padding:10px 16px calc(10px + var(--sab));
     display:flex; justify-content:center;
     box-shadow:0 -2px 10px var(--shadow);
   }
@@ -670,7 +670,7 @@
   .mushaf-page.m15 .ml-basm{justify-content:center; font-size:0.95em;}
   .mushaf-page.m15 .ayah-text.playing, .mushaf-page.m15 .ml-end.playing{background:#F3DFA2;}
   .mushaf-page.m15 .ayah-text.selected{border-bottom:2px solid #A9822A;}
-  .mq-audio{position:fixed; left:12px; right:12px; bottom:calc(52px + env(safe-area-inset-bottom, 0px)); max-width:420px; margin:0 auto; z-index:20; display:flex; align-items:center; gap:8px; background:#7A3A6B; color:#fff; border-radius:99px; padding:6px 6px 6px 14px; box-shadow:0 6px 18px rgba(0,0,0,.2);}
+  .mq-audio{position:fixed; left:12px; right:12px; bottom:calc(52px + var(--sab)); max-width:420px; margin:0 auto; z-index:20; display:flex; align-items:center; gap:8px; background:#7A3A6B; color:#fff; border-radius:99px; padding:6px 6px 6px 14px; box-shadow:0 6px 18px rgba(0,0,0,.2);}
   .mq-audio[hidden]{display:none;}
   .mq-audio .mqa-t{flex:1; font-weight:700; font-size:0.85rem;}
   .mq-audio button{width:34px; height:34px; border-radius:50%; border:none; background:rgba(255,255,255,.18); color:#fff;}
@@ -688,7 +688,7 @@
   .sl-count{margin-top:10px;}
   .dua-amira .da-sub{font-size:0.78rem; color:var(--muted, #6b6b6b); line-height:1.7; margin:-4px 0 10px;}
   /* adhan playing in the page: stop bar */
-  .adhan-bar{position:fixed; left:12px; right:12px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:60; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 14px; border-radius:16px; background:var(--card, #fff); border:1px solid #D9C48A; box-shadow:0 8px 28px rgba(0,0,0,0.18); font-weight:700;}
+  .adhan-bar{position:fixed; left:12px; right:12px; bottom:calc(14px + var(--sab)); z-index:60; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 14px; border-radius:16px; background:var(--card, #fff); border:1px solid #D9C48A; box-shadow:0 8px 28px rgba(0,0,0,0.18); font-weight:700;}
   .adhan-bar[hidden]{display:none;}
   /* one bookmark: a ribbon hanging on the marked page, and a home card */
   .mushaf-viewport{position:relative;}
@@ -717,7 +717,7 @@
   /* cleanup: browser-only leftovers and duplicate settings are not shown */
   #installTip, #notificationNotice, .settings-row:has(#fullScreenToggle), .settings-row:has(#quranSizeRange){display:none !important;}
   /* ---------- opening screen (sp2): calm deep-teal → sage, soft light, glass card ---------- */
-  .splash.sp2{background:linear-gradient(165deg,#4A2140 0%,#5E2C52 38%,#8A4A7C 72%,#B57CA8 100%); overflow:hidden; gap:0; justify-content:space-between; padding:calc(64px + env(safe-area-inset-top)) 28px calc(40px + env(safe-area-inset-bottom));}
+  .splash.sp2{background:linear-gradient(165deg,#4A2140 0%,#5E2C52 38%,#8A4A7C 72%,#B57CA8 100%); overflow:hidden; gap:0; justify-content:space-between; padding:calc(64px + env(safe-area-inset-top)) 28px calc(40px + var(--sab));}
   .splash.sp2::before{content:""; position:absolute; inset:0; opacity:.07; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23F6E7C1' stroke-width='2'%3E%3Crect x='26' y='26' width='44' height='44'/%3E%3Crect x='26' y='26' width='44' height='44' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3C/g%3E%3C/svg%3E"); background-size:96px 96px;}
   .sp-orb{position:absolute; border-radius:50%; filter:blur(50px); pointer-events:none;}
   .sp-o1{width:320px; height:320px; background:#F3D9A4; opacity:.22; top:-80px; right:-90px; animation:spFloat 9s ease-in-out infinite;}
@@ -894,7 +894,7 @@
   .msc-box{flex:1; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; padding-bottom:45vh;}
   #view-mushaf .msc .mushaf-page.m15{width:100%; transition:none; overflow:hidden;}
   .msc-pn{text-align:center; font-weight:800; font-size:0.8rem; color:#7A5A16; background:#F3E7C6; border-radius:99px; width:max-content; margin:2px auto 10px; padding:1px 14px;}
-  .msc-ctrl{flex:none; display:flex; align-items:center; justify-content:center; gap:10px; padding:8px 10px calc(10px + env(safe-area-inset-bottom)); background:#F3E7C6; border-top:1px solid #D9C9A0;}
+  .msc-ctrl{flex:none; display:flex; align-items:center; justify-content:center; gap:10px; padding:8px 10px calc(10px + var(--sab)); background:#F3E7C6; border-top:1px solid #D9C9A0;}
   .msc-ctrl button{border:none; background:#E9D9AE; color:#7A5A16; min-width:38px; height:38px; border-radius:10px; font-weight:800; font-size:1rem; padding:0 10px;}
   .msc-ctrl .msc-main{background:#7A5A16; color:#FDF8EC; min-width:52px; border-radius:99px;}
   .msc-ctrl .msc-stop{background:#FDF8EC; border:1px solid #D9C9A0;}
@@ -976,7 +976,7 @@
   .pc-chip{font:inherit; font-size:.72rem; font-weight:700; color:var(--teal-deep); background:var(--teal-tint); border:1px solid var(--paper-3); border-radius:999px; padding:3px 10px; cursor:pointer;}
   .prayer-head .pc-chip{font-size:.7rem;}
   .pt-sheet{position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,.45); display:flex; align-items:flex-end; justify-content:center;}
-  .pt-box{position:relative; width:100%; max-width:520px; max-height:88vh; overflow:auto; background:var(--paper); color:var(--ink); border-radius:22px 22px 0 0; padding:18px 16px calc(18px + env(safe-area-inset-bottom)); box-shadow:var(--shadow); text-align:center;}
+  .pt-box{position:relative; width:100%; max-width:520px; max-height:88vh; overflow:auto; background:var(--paper); color:var(--ink); border-radius:22px 22px 0 0; padding:18px 16px calc(18px + var(--sab)); box-shadow:var(--shadow); text-align:center;}
   .pt-box h3{margin:4px 0 6px; color:var(--teal-deep); font-size:1.05rem;}
   .pt-x{position:absolute; top:10px; left:12px; border:0; background:var(--paper-2); color:var(--ink); width:32px; height:32px; border-radius:50%; font-size:.9rem; cursor:pointer;}
   .pt-now{font-size:.85rem; color:var(--ink-soft); margin:0 0 12px;}
@@ -1003,7 +1003,39 @@
   .qb-deg{font-size:.95rem; margin:6px 0 0;}
   .qb-deg b{color:var(--teal-deep);}
 
+  .gift-hello{font-weight:800; color:var(--teal-deep); font-size:.98rem; margin-bottom:10px;}
+  .gift-word{font-family:inherit; font-size:1.08rem; line-height:1.95; font-weight:600;}
+  .gift-foryou{margin-top:12px; padding:9px 12px; border-radius:14px; background:var(--gold-tint); color:var(--ink); font-weight:700; font-size:.92rem;}
+
+  .sh-prev{max-height:22vh; overflow:auto; margin:6px 0 12px; padding:10px 12px; border-radius:14px; background:var(--paper-2); color:var(--ink-soft); font-size:.9rem; line-height:1.8; white-space:pre-line; text-align:right;}
+  .sh-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .sh-app{display:flex; flex-direction:column; align-items:center; gap:2px; padding:12px 6px; border-radius:16px; border:1px solid var(--paper-3); background:var(--paper); color:var(--ink); font:inherit; cursor:pointer;}
+  .sh-app:active{transform:scale(.97);} .sh-ic{font-size:1.5rem; line-height:1.2;} .sh-app b{font-size:.9rem;} .sh-app small{font-size:.72rem; color:var(--ink-soft);}
+
+  .gift-moods{margin-top:14px; padding-top:12px; border-top:1px dashed var(--paper-3);}
+  .gift-mq{font-size:.82rem; font-weight:700; color:var(--ink-soft); margin-bottom:8px;}
+  .gift-mrow{display:flex; flex-wrap:wrap; gap:6px; justify-content:center;}
+  .gift-mood{border:1px solid var(--paper-3); background:var(--paper-2); color:var(--ink); border-radius:99px; padding:6px 12px; font:inherit; font-size:.85rem; font-weight:700; cursor:pointer;}
+  .gift-mood.on{background:var(--teal); border-color:var(--teal); color:#fff;}
+  .gift-open{max-height:92vh; overflow-y:auto;}
+  .sh-img{display:flex; align-items:center; justify-content:center; min-height:200px; margin:6px auto 12px; max-width:260px; border-radius:16px; background:var(--paper-2); color:var(--ink-soft); font-size:.85rem; overflow:hidden;}
+  .sh-img img{display:block; width:100%; height:auto;}
+  .sh-main{width:100%; margin-bottom:8px;} .sh-save{width:100%;}
+  .sh-or{margin:14px 0 8px; font-size:.8rem; color:var(--ink-soft);}
+
 /*/WIRDI4-CSS*/
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));}
 
   /* ---- «أثر» ---- */
   .athar-card{position:relative; margin:4px 16px 14px; padding:22px 18px 16px; border-radius:26px; text-align:center; overflow:hidden;
@@ -1011,8 +1043,23 @@
   .athar-card::before{content:""; position:absolute; inset:auto -40px -60px auto; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.45);}
   .ac-flower{font-size:2rem; line-height:1;}
   .ac-name{font-family:"Amiri",serif; font-size:1.7rem; font-weight:700; margin-top:6px; color:#6E3460;}
+  .athar-dad{margin:-4px 16px 14px; padding:14px 16px 12px; border-radius:22px; background:linear-gradient(160deg,#FFF7FB,#F6ECF7); border:1px solid #E7C8DD; box-shadow:0 6px 18px rgba(120,50,100,.08); color:#4A2440;}
+  .ad-head{display:flex; align-items:baseline; justify-content:space-between; gap:8px; flex-wrap:wrap;}
+  .ad-name{font-family:"Amiri",serif; font-size:1.3rem; font-weight:700; color:#6E3460;} .ad-sub{font-size:.8rem; color:#8E5F80;}
+  .ad-dua{margin-top:8px; font-family:"Amiri",serif; font-size:1.08rem; line-height:1.85; max-height:9em; overflow-y:auto; transition:opacity .22s ease, transform .22s ease;}
+  .ad-dua.swap{opacity:0; transform:translateY(4px);}
+  .ad-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px;}
+  .ad-count{font-size:.78rem; color:#8E5F80;}
+  .ad-btn{flex:none; border:none; border-radius:99px; padding:8px 20px; font:inherit; font-weight:800; color:#fff; background:linear-gradient(135deg,#B0578F,#7A3A6B); cursor:pointer;}
+  .ad-btn:active{transform:scale(.97);}
+  .ad-acts{display:flex; gap:6px; flex:none;}
+  .ad-sh{border:1px solid #E7C8DD; background:#fff; border-radius:99px; width:40px; height:38px; font-size:1.05rem; cursor:pointer;}
+  .ac-share{position:relative; display:block; margin:10px auto 0; border:1px solid #E7C8DD; background:rgba(255,255,255,.7); color:#6E3460; border-radius:99px; padding:7px 18px; font:inherit; font-size:.88rem; font-weight:800; cursor:pointer;}
+  :root[data-theme="dark"] .ac-share, :root[data-theme="dark"] .ad-sh{background:#2B1D31; border-color:#3E2B47; color:#F2B8DD;}
+  :root[data-theme="dark"] .athar-dad{background:linear-gradient(160deg,#2B1D31,#24182A); border-color:#3E2B47; color:#F3E7F0;}
+  :root[data-theme="dark"] .ad-name{color:#F2B8DD;} :root[data-theme="dark"] .ad-sub, :root[data-theme="dark"] .ad-count{color:#C9AFC2;}
   .ac-sub{font-size:.88rem; color:#8E5F80; margin-top:2px;}
-  .ac-dua{position:relative; margin:14px auto 0; max-width:30em; font-family:"Amiri",serif; font-size:1.18rem; line-height:1.9; color:#3A2233; transition:opacity .22s ease, transform .22s ease;}
+  .ac-dua{position:relative; margin:14px auto 0; max-width:30em; font-family:"Amiri",serif; font-size:1.18rem; line-height:1.9; color:#3A2233; max-height:11.4em; overflow-y:auto; overscroll-behavior:contain; transition:opacity .22s ease, transform .22s ease;}
   .ac-dua.swap{opacity:0; transform:translateY(6px);}
   .ac-btn{position:relative; margin-top:14px; border:none; border-radius:99px; padding:10px 34px; font-size:1.05rem; font-weight:800; color:#fff;
     background:linear-gradient(135deg,#B0578F,#7B4FC9); box-shadow:0 8px 20px rgba(123,79,201,.25);}
@@ -1044,12 +1091,12 @@
     background:linear-gradient(135deg,#9C4F86,#7B4FC9); -webkit-background-clip:text; background-clip:text; color:transparent;}
   .splash.sp2 .splash-title{font-family:"KFGQPC Hafs","Amiri",serif; font-size:4rem;}
   /* the home in tabs (athar_home.js): only the open tab's sections show; the rest of the home is «الرئيسية» */
-  #view-home{padding-bottom:calc(96px + env(safe-area-inset-bottom));}
+  #view-home{padding-bottom:calc(96px + var(--sab));}
   #view-home[data-tab="home"] > [data-at]{display:none !important;}
   #view-home[data-tab="quran"] > :not(.topbar):not([data-at="quran"]),
   #view-home[data-tab="adhkar"] > :not(.topbar):not([data-at="adhkar"]),
   #view-home[data-tab="listen"] > :not(.topbar):not([data-at="listen"]){display:none !important;}
-  .ath-tabs{position:fixed; left:12px; right:12px; bottom:calc(10px + env(safe-area-inset-bottom)); z-index:16; max-width:520px; margin:0 auto;
+  .ath-tabs{position:fixed; left:12px; right:12px; bottom:calc(10px + var(--sab)); z-index:16; max-width:520px; margin:0 auto;
     display:flex; justify-content:space-around; padding:6px; border-radius:24px; background:rgba(255,255,255,.92);
     -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); box-shadow:0 10px 30px rgba(110,52,96,.18); border:1px solid #F0DCE8;}
   .ath-tabs[hidden]{display:none;}
@@ -1091,6 +1138,7 @@
   <div class="sp-card">
     <p class="splash-line">هذا التطبيق صدقة جارية عن سعدية أمين مهنى</p>
     <p class="splash-sub">رحمها الله، فادعُ لها بالرحمة والمغفرة 🤍</p>
+<p class="splash-sub">ولمحمد إبراهيم علي — حفظه الله وبارك في عمره</p>
   </div>
   <div class="sp-dots"><i></i><i></i><i></i></div>
 </div>
@@ -1585,7 +1633,7 @@
 
     <div class="settings-section">
       <h3>عن أَثَر</h3>
-      <p class="about-line">هذا التطبيق صدقة جارية عن سعدية أمين مهنى، رحمها الله، فادعُ لها بالرحمة والمغفرة، ونسأل الله أن يتقبلها وينفع بها كل من يستخدمها ويجعل أجرها نورًا لها في قبرها 🤍</p>
+      <p class="about-line">هذا التطبيق صدقة جارية عن سعدية أمين مهنى، رحمها الله، فادعُ لها بالرحمة والمغفرة، ونسأل الله أن يتقبلها وينفع بها كل من يستخدمها ويجعل أجرها نورًا لها في قبرها، ويحفظ محمد إبراهيم علي ويبارك في عمره 🤍</p>
     </div>
   </main>
 
@@ -3722,8 +3770,7 @@ const EVENING_ADHKAR = [
   document.getElementById("actShare").addEventListener("click", function(){
     if (!ayahSheetCtx) return;
     var t = ayahShareText(ayahSheetCtx.surah, ayahSheetCtx.ayah);
-    if (navigator.share) navigator.share({ text: t }).catch(function(){});
-    else if (navigator.clipboard) navigator.clipboard.writeText(t).then(function(){ showToast("تم نسخ الآية للمشاركة"); });
+    shareSheet(t);
   });
   document.getElementById("actFav").addEventListener("click", function(){
     if (!ayahSheetCtx) return;
@@ -5795,7 +5842,7 @@ const EVENING_ADHKAR = [
     return '<div class="hf-card dua-card"><div class="dua-title">' + title + '</div>' +
       '<div class="' + (isQuran ? "st-quote" : "dua-text") + '">' + html + '</div><div class="dua-ref">' + ref + '</div>' +
       '<div class="dua-actions">' + (isQuran ? '<button class="btn ghost" data-dua="play" data-k="' + key + '">' + (duaPlay.key === key ? "⏸ إيقاف" : "🔊 استماع") + '</button>' : '') +
-      '<button class="btn ghost" data-dua="copy" data-k="' + key + '">📋 نسخ</button>' +
+      '<button class="btn ghost" data-dua="copy" data-k="' + key + '">📤 شارك</button>' +
       '<button class="btn ghost" data-dua="fav" data-k="' + key + '">' + (fav ? "★ مفضل" : "☆ مفضلة") + '</button></div></div>';
   }
   function duaByKey(key){
@@ -5837,8 +5884,7 @@ const EVENING_ADHKAR = [
     if (act === "play" && d.quran){ if (duaPlay.key === key){ duaStop(); renderDuas(); } else duaPlayQuran(d.quran); }
     else if (act === "copy"){
       var txt = d.quran ? (function(){ var t = []; for (var a = d.quran.a[0]; a <= d.quran.a[1]; a++) t.push(QURAN_AYAHS[d.quran.s - 1][a - 1]); return t.join(" ") + "\n﴿ " + quranDuaRef(d.quran) + " ﴾"; })() : d.sunnah.text + "\n— " + d.sunnah.ref;
-      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function(){ showToast("تم النسخ ✓"); }, function(){ showToast("تعذر النسخ"); });
-      else showToast("النسخ غير مدعوم على هذا الجهاز");
+      shareSheet(txt);
     }
     else if (act === "fav"){
       var i = duaFav.indexOf(key); if (i === -1) duaFav.push(key); else duaFav.splice(i, 1);
@@ -6287,14 +6333,14 @@ const EVENING_ADHKAR = [
           (q.rep > 1 ? ' <span class="ruq-rep">× ' + toArabicIndic(q.rep) + '</span>' : '') + '</div>' +
           '<div class="st-quote">' + ruqAyahsHtml(q) + '</div><div class="dua-ref">﴿ ' + ruqRef(q) + ' ﴾</div>' +
           '<div class="dua-actions"><button class="btn ghost" data-ruq="play" data-i="' + i + '">' + (on ? "🔊 بيتقري الآن" : "▶ ابدأ من هنا") + '</button>' +
-          '<button class="btn ghost" data-ruq="copy" data-i="' + i + '">📋 نسخ</button></div></div>';
+          '<button class="btn ghost" data-ruq="copy" data-i="' + i + '">📤 شارك</button></div></div>';
       });
     } else {
       RUQYAH_SUNNAH.forEach(function(r, i){
         h += '<div class="hf-card dua-card"><div class="dua-title">' + r.title + '</div>' +
           (r.desc ? '<div class="hf-meta" style="margin-bottom:6px;">' + r.desc + '</div>' : '') +
           '<div class="dua-text">«' + r.text + '»</div><div class="dua-ref">' + r.ref + '</div>' +
-          '<div class="dua-actions"><button class="btn ghost" data-ruq="copyS" data-i="' + i + '">📋 نسخ</button></div></div>';
+          '<div class="dua-actions"><button class="btn ghost" data-ruq="copyS" data-i="' + i + '">📤 شارك</button></div></div>';
       });
     }
     h += '<p class="muted" style="font-size:0.72rem;text-align:center;">الآيات من نص المصحف (حفص عن عاصم) • الأحاديث منقولة بنصها من صحيح البخاري وصحيح مسلم مع رقم الحديث.<br>الرقية لا تُغني عن الأخذ بالأسباب ومراجعة الطبيب، والشفاء بيد الله وحده.</p>';
@@ -6389,10 +6435,7 @@ const EVENING_ADHKAR = [
     if (ruq.paused){ p.play(); ruq.paused = false; } else { p.pause(); ruq.paused = true; }
     renderRuqyah();
   }
-  function ruqCopy(txt){
-    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(function(){ showToast("تم النسخ ✓"); }, function(){ showToast("تعذر النسخ"); });
-    else showToast("النسخ غير مدعوم على هذا الجهاز");
-  }
+  function ruqCopy(txt){ shareSheet(txt); }
   document.getElementById("ruqyahBody").addEventListener("click", function(e){
     var b = e.target.closest("[data-ruq]"); if (!b) return;
     var act = b.getAttribute("data-ruq"), i = +b.getAttribute("data-i");
@@ -7012,6 +7055,137 @@ const EVENING_ADHKAR = [
     else if (e.target.closest("[data-qibla]")) qiblaSheet();
   });
 
+  // ---------------- Share: a picture of the words, ready for a WhatsApp status or a message ----------------
+  // Every share draws a card (1080×1920, a status's size) with the ayah / dua, its source and the app's name, and
+  // hands the picture to the phone: the phone app (from the version with WirdiNative.shareImage) and phone browsers
+  // open the phone's own share list (WhatsApp → «حالتي» or a chat, Facebook, Instagram…). The words alone can still
+  // go as text from the same sheet.
+  var SH_LINE = "صدقة جارية عن سعدية أمين مهنى — رحمها الله";
+  var SH_APPS = [
+    ["wa", "🟢", "واتساب", "كلام بس"],
+    ["tg", "✈️", "تليجرام", "كلام بس"],
+    ["copy", "📋", "نسخ", "الكلام"],
+  ];
+  function shIsApp(){ var C = window.Capacitor; return !!(C && C.isNativePlatform && C.isNativePlatform()); }
+  function shWN(){ var C = window.Capacitor; return C && C.Plugins && C.Plugins.WirdiNative; }
+  function shOpen(url){
+    if (shIsApp()) location.href = url;   // the app hands any outside link to the phone, which opens WhatsApp / Telegram…
+    else window.open(url, "_blank", "noopener");
+  }
+  function shCopy(txt, msg){
+    return (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){ if (msg) showToast(msg); }, function(){ if (msg) showToast("تعذر النسخ على الجهاز ده"); });
+  }
+  function shLink(){ return "https://" + location.host + location.pathname; }
+  // plain text → { body, ref, quran }: a last line that is a source («﴿ البقرة: ٢ ﴾», «— البخاري», «[…]») goes under the words
+  function shParse(txt){
+    var lines = String(txt).split("\n").map(function(l){ return l.trim(); }).filter(Boolean), ref = "";
+    var last = lines[lines.length - 1] || "";
+    if (lines.length > 1 && last.length < 70 && /^(﴿|—|\[|\()/.test(last)){ ref = lines.pop().replace(/^[—\s]+/, "").replace(/^\[|\]$/g, ""); }
+    var body = lines.join("\n"), m = body.match(/^(.*?)\s*\[([^\[\]]{2,40})\]$/);   // «… [الإسراء: ٢٤]» at the end of one line
+    if (!ref && m){ body = m[1]; ref = m[2]; }
+    return { body: body, ref: ref, quran: /[ۡۖۚۛۗ]/.test(body) };
+  }
+
+  // ---- the picture ----
+  function shVar(n, d){ var v = getComputedStyle(document.documentElement).getPropertyValue(n).trim(); return v || d; }
+  function shWrap(g, text, maxW){
+    var out = [];
+    String(text).split("\n").forEach(function(par){
+      var words = par.split(/\s+/).filter(Boolean), line = "";
+      words.forEach(function(w){
+        var t = line ? line + " " + w : w;
+        if (line && g.measureText(t).width > maxW){ out.push(line); line = w; } else line = t;
+      });
+      if (line) out.push(line);
+    });
+    return out;
+  }
+  function shRound(g, x, y, w, h, r){ g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+  var shIcon = null;
+  function shDraw(o){
+    var QF = '"KFGQPC Hafs","Amiri Quran","Amiri",serif', AF = '"Amiri","Traditional Arabic",serif', UF = '"Tajawal","Segoe UI",Tahoma,sans-serif';
+    var fonts = ["700 60px Amiri", "400 60px Amiri", "700 40px Tajawal", "60px 'KFGQPC Hafs'"].map(function(f){ return document.fonts && document.fonts.load ? document.fonts.load(f, "بسم الله").catch(function(){}) : null; });
+    var icon = shIcon ? Promise.resolve(shIcon) : new Promise(function(res){ var im = new Image(); im.onload = function(){ shIcon = im; res(im); }; im.onerror = function(){ res(null); }; im.src = "icon-192.png"; });
+    return Promise.all(fonts.concat([icon])).then(function(r){
+      var ic = r[r.length - 1], W = 1080, H = 1920, c = document.createElement("canvas"); c.width = W; c.height = H;
+      var g = c.getContext("2d"); g.direction = "rtl"; g.textAlign = "center"; g.textBaseline = "middle";
+      var deep = shVar("--teal-deep", "#6E3460"), teal = shVar("--teal", "#9C4F86"), gold = shVar("--gold", "#A9822A");
+      // background + soft light
+      var bg = g.createLinearGradient(0, 0, W * 0.4, H); bg.addColorStop(0, deep); bg.addColorStop(1, teal); g.fillStyle = bg; g.fillRect(0, 0, W, H);
+      [[W * 0.88, 210, 360, 0.10], [W * 0.08, H * 0.62, 420, 0.07], [W * 0.7, H * 0.95, 300, 0.08]].forEach(function(s){ var rg = g.createRadialGradient(s[0], s[1], 0, s[0], s[1], s[2]); rg.addColorStop(0, "rgba(255,255,255," + s[3] + ")"); rg.addColorStop(1, "rgba(255,255,255,0)"); g.fillStyle = rg; g.fillRect(0, 0, W, H); });
+      // the words: the biggest size that fits the card
+      var cardX = 80, cardW = W - 160, padX = 70, maxTextH = 1020, size = o.quran ? 66 : 62, lines, lh, fam = o.quran ? QF : AF;
+      for (; size >= 30; size -= 2){ g.font = (o.quran ? "400 " : "700 ") + size + "px " + fam; lines = shWrap(g, o.body, cardW - padX * 2); lh = size * (o.quran ? 1.95 : 1.75); if (lines.length * lh <= maxTextH) break; }
+      var refH = o.ref ? 80 : 0, kickH = o.kicker ? 96 : 0, textH = lines.length * lh, cardH = textH + 140 + refH;
+      var top = Math.max(240, (H - 420 - cardH - kickH - (o.foot ? 120 : 0)) / 2 + 40);
+      if (o.kicker){
+        g.font = "700 40px " + UF; var kw = Math.min(W - 160, g.measureText(o.kicker).width + 80);
+        shRound(g, (W - kw) / 2, top, kw, 74, 37); g.fillStyle = "rgba(255,255,255,.16)"; g.fill();
+        g.fillStyle = "#fff"; g.fillText(o.kicker, W / 2, top + 39); top += kickH;
+      }
+      g.save(); g.shadowColor = "rgba(0,0,0,.25)"; g.shadowBlur = 50; g.shadowOffsetY = 18;
+      shRound(g, cardX, top, cardW, cardH, 48); g.fillStyle = "#FFFDF8"; g.fill(); g.restore();
+      g.fillStyle = gold; g.fillRect(W / 2 - 60, top + 34, 120, 6);
+      g.fillStyle = "#2A2015"; g.font = (o.quran ? "400 " : "700 ") + size + "px " + fam;
+      lines.forEach(function(l, i){ g.fillText(l, W / 2, top + 80 + lh * i + lh / 2); });
+      if (o.ref){ g.font = "700 36px " + UF; g.fillStyle = gold; g.fillText(o.ref, W / 2, top + 80 + textH + 50); }
+      top += cardH + 50;
+      if (o.foot){ g.font = "700 44px " + AF; g.fillStyle = "#fff"; shWrap(g, o.foot, W - 200).slice(0, 2).forEach(function(l, i){ g.fillText(l, W / 2, top + 30 + i * 62); }); }
+      // the app
+      var by = H - 250;
+      if (ic){ g.save(); shRound(g, W / 2 - 60, by - 190, 120, 120, 30); g.clip(); g.drawImage(ic, W / 2 - 60, by - 190, 120, 120); g.restore(); }
+      g.fillStyle = "#fff"; g.font = "700 72px " + AF; g.fillText(document.title.split(" - ")[0], W / 2, by + 10);
+      g.font = "400 34px " + UF; g.fillStyle = "rgba(255,255,255,.85)"; g.fillText(SH_LINE, W / 2, by + 85);
+      g.font = "700 32px " + UF; g.fillStyle = "rgba(255,255,255,.7)"; g.direction = "ltr"; g.fillText(location.host + location.pathname.replace(/\/$/, ""), W / 2, by + 140);
+      return c;
+    });
+  }
+  function shBlob(c){ return new Promise(function(res){ c.toBlob(function(b){ res(b); }, "image/png"); }); }
+
+  // ---- the sheet: the picture first, the words as text below ----
+  function shareSheet(txt, card){
+    card = card || shParse(txt);
+    var btns = SH_APPS.map(function(a){ return '<button type="button" class="sh-app" data-sh="' + a[0] + '"><span class="sh-ic">' + a[1] + '</span><b>' + a[2] + '</b><small>' + a[3] + '</small></button>'; }).join("");
+    var s = ptSheet('<h3>📤 شارك</h3><div class="sh-img"><span>بتتعمل الصورة…</span></div>' +
+      '<button type="button" class="btn primary sh-main" data-sh="img" disabled>📤 شارك الصورة — حالة أو رسالة</button>' +
+      '<button type="button" class="btn ghost sh-save" data-sh="save" disabled>⬇ حفظ الصورة</button>' +
+      '<div class="sh-or">أو ابعت الكلام بس</div><div class="sh-grid">' + btns + '</div>');
+    s.classList.add("sh-sheet");
+    var canvas = null;
+    shDraw(card).then(function(c){
+      canvas = c;
+      var box = s.querySelector(".sh-img"); if (!box) return;
+      box.innerHTML = ""; var im = new Image(); im.src = c.toDataURL("image/jpeg", 0.8); im.alt = "صورة المشاركة"; box.appendChild(im);
+      s.querySelectorAll(".sh-main, .sh-save").forEach(function(b){ b.disabled = false; });
+    }, function(){ var box = s.querySelector(".sh-img"); if (box) box.textContent = "تعذر عمل الصورة — ابعت الكلام بس"; });
+    s.addEventListener("click", function(e){
+      var b = e.target.closest("[data-sh]"); if (!b) return;
+      var k = b.getAttribute("data-sh"), t = encodeURIComponent(txt);
+      if (k === "img" || k === "save"){ if (canvas) shPicture(canvas, k === "save", txt); return; }
+      if (k === "wa") shOpen("https://api.whatsapp.com/send?text=" + t);
+      else if (k === "tg") shOpen("https://t.me/share/url?url=" + encodeURIComponent(shLink()) + "&text=" + t);
+      else if (k === "copy") shCopy(txt, "اتنسخ ✓");
+      ptSheetClose();
+    });
+  }
+  function shPicture(c, save, txt){
+    var WN = shWN(), name = "share-" + Date.now() + ".png";
+    // the phone app with the native share (new version)
+    if (WN && WN.shareImage){
+      var data = c.toDataURL("image/png").split(",")[1];
+      (save ? WN.saveImage({ data: data }) : WN.shareImage({ data: data, text: "" })).then(function(){ if (save) showToast("اتحفظت في الصور ✓"); }, function(){ showToast("تعذر — جرّب تاني"); });
+      return;
+    }
+    shBlob(c).then(function(blob){
+      var file = new File([blob], name, { type: "image/png" });
+      if (!save && navigator.canShare && navigator.canShare({ files: [file] })){ navigator.share({ files: [file] }).catch(function(){}); return; }
+      if (shIsApp()){ showToast("مشاركة الصورة محتاجة النسخة الجديدة من التطبيق 🤍"); return; }
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+      showToast(save ? "اتحفظت ✓" : "الجهاز ده مش بيشارك صور — اتحفظت، ابعتها من الصور");
+    });
+  }
+
   // ---------------- Home (v4): greeting by time of day, prayer times card, prayer-sunnah reminders ----------------
   // Notifications: on Android Chrome `new Notification()` throws ("use ServiceWorkerRegistration.showNotification"),
   // so every notification in the app goes through the service worker when one is available.
@@ -7165,7 +7339,7 @@ const EVENING_ADHKAR = [
   setInterval(function(){ ptRefresh(); checkPrayerReminders(); }, 30000);
   // Android keeps the app alive in the background, so a new deploy only shows after a real restart:
   // on coming back, ask the site for its build stamp and reload if it is newer (never mid-recitation)
-  var WIRDI_BUILD = "f9b38edb4853", verChecked = 0;
+  var WIRDI_BUILD = "359144a239f4", verChecked = 0;
   function wirdiAudioBusy(){
     var list = [].slice.call(document.querySelectorAll("audio"));
     if (typeof quranPlayers !== "undefined") list = list.concat(quranPlayers);
@@ -7469,16 +7643,195 @@ const EVENING_ADHKAR = [
   // with its virtue (HOURLY_DHIKR, verified hadith). App open → a gentle card at the bottom; in the background →
   // a notification. The phone app schedules the same reminders itself (native.js); sw.js covers Chrome's periodic sync.
   var DUA_AMIRA = [
-    "اللهم اغفر لها وارحمها، وعافها واعفُ عنها، وأكرم نُزُلها، ووسّع مُدخَلها",
-    "اللهم اغسلها بالماء والثلج والبَرَد، ونقّها من الخطايا كما يُنقّى الثوب الأبيض من الدنس",
-    "اللهم أبدلها دارًا خيرًا من دارها، وأدخلها الجنة، وأعذها من عذاب القبر ومن عذاب النار",
-    "اللهم اجعل قبرها روضة من رياض الجنة، ونوّر لها فيه، وافسح لها فيه مدّ بصرها",
-    "اللهم اجعل هذا التطبيق صدقة جارية عنها، وأجرًا لا ينقطع، ونورًا لها في قبرها",
-    "اللهم ارحمها تحت الأرض، ويوم العرض عليك، واجمعها بأحبّتها في الفردوس الأعلى",
-    "اللهم ثبّتها عند السؤال، وآنس وحشتها، وارحم غربتها",
-    "اللهم ارزقها الفردوس الأعلى من الجنة بغير حساب ولا سابقة عذاب",
-    "اللهم اجعل كل حرف يُقرأ في هذا التطبيق في ميزان حسناتها",
-    "اللهم اغفر لحيّنا وميّتنا، وارحمها وجميع موتى المسلمين"
+    "﴿ رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا ٢٤ ﴾ [الإسراء: ٢٤]",
+    "اللهم اجعل قبرها روضة من رياض الجنة، ولا تجعله حفرة من حفر النار، وافسح لها فيه مدّ بصرها، وافرشه لها من فُرُش الجنة",
+    "اللهم اغفر لها وارحمها، وعافها واعفُ عنها، وأكرم نُزُلها، ووسّع مُدخَلها، واغسلها بالماء والثلج والبَرَد، ونقّها من الخطايا كما نقّيت الثوب الأبيض من الدَّنَس، وأبدلها دارًا خيرًا من دارها، وأهلًا خيرًا من أهلها، وأدخلها الجنة، وأعذها من عذاب القبر ومن عذاب النار",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ ٱلَّذِينَ تَتَوَفَّىٰهُمُ ٱلۡمَلَٰٓئِكَةُ طَيِّبِينَ يَقُولُونَ سَلَٰمٌ عَلَيۡكُمُ ٱدۡخُلُواْ ٱلۡجَنَّةَ بِمَا كُنتُمۡ تَعۡمَلُونَ ٣٢ ﴾ [النحل: ٣٢]",
+    "اللهم كل وجع مرّت به، وكل همّ حملته، اجعله رفعة لها وتكفيرًا لذنوبها",
+    "﴿ رَبَّنَا ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِلۡمُؤۡمِنِينَ يَوۡمَ يَقُومُ ٱلۡحِسَابُ ٤١ ﴾ [إبراهيم: ٤١]",
+    "اللهم اجعل هذا التطبيق صدقة جارية عنها، وأجرًا لا ينقطع، ونورًا لها في قبرها، وكل حرف يُقرأ فيه في ميزان حسناتها",
+    "اللهم اغفر لحيّنا وميّتنا، وشاهدنا وغائبنا، وصغيرنا وكبيرنا، وذكرنا وأنثانا. اللهم من أحييته منا فأحيِه على الإسلام، ومن توفّيته منا فتوفّه على الإيمان. اللهم لا تحرمنا أجرها، ولا تُضلّنا بعدها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يَٰٓأَيَّتُهَا ٱلنَّفۡسُ ٱلۡمُطۡمَئِنَّةُ ٢٧ ٱرۡجِعِيٓ إِلَىٰ رَبِّكِ رَاضِيَةٗ مَّرۡضِيَّةٗ ٢٨ فَٱدۡخُلِي فِي عِبَٰدِي ٢٩ وَٱدۡخُلِي جَنَّتِي ٣٠ ﴾ [الفجر: ٢٧–٣٠]",
+    "اللهم ارحمها كما ربّت صغارها، واحفظ صغارها بعدها كما كانت تحفظهم",
+    "﴿ رَّبِّ ٱغۡفِرۡ لِي وَلِوَٰلِدَيَّ وَلِمَن دَخَلَ بَيۡتِيَ مُؤۡمِنٗا وَلِلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِۖ ٢٨ ﴾ [نوح: ٢٨]",
+    "اللهم ارحمها تحت الأرض، واسترها يوم العرض، ولا تخزها يوم يُبعثون، يوم لا ينفع مال ولا بنون إلا من أتى الله بقلب سليم",
+    "اللهم إن سعدية بنت أمين في ذمّتك وحبل جوارك، فقِها من فتنة القبر وعذاب النار، وأنت أهل الوفاء والحق، فاغفر لها وارحمها، إنك أنت الغفور الرحيم",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ جَنَّٰتُ عَدۡنٖ يَدۡخُلُونَهَا وَمَن صَلَحَ مِنۡ ءَابَآئِهِمۡ وَأَزۡوَٰجِهِمۡ وَذُرِّيَّٰتِهِمۡۖ وَٱلۡمَلَٰٓئِكَةُ يَدۡخُلُونَ عَلَيۡهِم مِّن كُلِّ بَابٖ ٢٣ سَلَٰمٌ عَلَيۡكُم بِمَا صَبَرۡتُمۡۚ فَنِعۡمَ عُقۡبَى ٱلدَّارِ ٢٤ ﴾ [الرعد: ٢٣–٢٤]",
+    "اللهم اجعل أولادها ذرية صالحة يدعون لها، ولا تقطع عنها دعاءهم",
+    "﴿ رَبَّنَا ٱغۡفِرۡ لَنَا وَلِإِخۡوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلۡإِيمَٰنِ وَلَا تَجۡعَلۡ فِي قُلُوبِنَا غِلّٗا لِّلَّذِينَ ءَامَنُواْ رَبَّنَآ إِنَّكَ رَءُوفٞ رَّحِيمٌ ١٠ ﴾ [الحشر: ١٠]",
+    "اللهم آنس وحشتها، وارحم غربتها، ونوّر ظلمة قبرها، واجعل القرآن أنيسها فيه",
+    "اللهم أنت ربّها، وأنت خلقتها، وأنت هديتها للإسلام، وأنت قبضت روحها، وأنت أعلم بسرّها وعلانيتها، جئناك شفعاء فاغفر لها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلَّذِينَ قَالُواْ رَبُّنَا ٱللَّهُ ثُمَّ ٱسۡتَقَٰمُواْ تَتَنَزَّلُ عَلَيۡهِمُ ٱلۡمَلَٰٓئِكَةُ أَلَّا تَخَافُواْ وَلَا تَحۡزَنُواْ وَأَبۡشِرُواْ بِٱلۡجَنَّةِ ٱلَّتِي كُنتُمۡ تُوعَدُونَ ٣٠ نَحۡنُ أَوۡلِيَآؤُكُمۡ فِي ٱلۡحَيَوٰةِ ٱلدُّنۡيَا وَفِي ٱلۡأٓخِرَةِۖ وَلَكُمۡ فِيهَا مَا تَشۡتَهِيٓ أَنفُسُكُمۡ وَلَكُمۡ فِيهَا مَا تَدَّعُونَ ٣١ نُزُلٗا مِّنۡ غَفُورٖ رَّحِيمٖ ٣٢ ﴾ [فصلت: ٣٠–٣٢]",
+    "اللهم اجعل كل من قرأ في هذا التطبيق آية أو ذكرًا سببًا في رفعة درجتها",
+    "﴿ رَبَّنَا وَسِعۡتَ كُلَّ شَيۡءٖ رَّحۡمَةٗ وَعِلۡمٗا فَٱغۡفِرۡ لِلَّذِينَ تَابُواْ وَٱتَّبَعُواْ سَبِيلَكَ وَقِهِمۡ عَذَابَ ٱلۡجَحِيمِ ٧ رَبَّنَا وَأَدۡخِلۡهُمۡ جَنَّٰتِ عَدۡنٍ ٱلَّتِي وَعَدتَّهُمۡ وَمَن صَلَحَ مِنۡ ءَابَآئِهِمۡ وَأَزۡوَٰجِهِمۡ وَذُرِّيَّٰتِهِمۡۚ إِنَّكَ أَنتَ ٱلۡعَزِيزُ ٱلۡحَكِيمُ ٨ وَقِهِمُ ٱلسَّيِّـَٔاتِۚ وَمَن تَقِ ٱلسَّيِّـَٔاتِ يَوۡمَئِذٖ فَقَدۡ رَحِمۡتَهُۥۚ وَذَٰلِكَ هُوَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ ٩ ﴾ [غافر: ٧–٩]",
+    "اللهم ارزقها الفردوس الأعلى من الجنة بغير حساب ولا سابقة عذاب، واجمعها بأحبّتها في مستقر رحمتك",
+    "اللهم اغفر لها، وارفع درجتها في المهديّين، واخلُفها في عَقِبها في الغابرين، واغفر لنا ولها يا رب العالمين، وافسح لها في قبرها، ونوّر لها فيه",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يُثَبِّتُ ٱللَّهُ ٱلَّذِينَ ءَامَنُواْ بِٱلۡقَوۡلِ ٱلثَّابِتِ فِي ٱلۡحَيَوٰةِ ٱلدُّنۡيَا وَفِي ٱلۡأٓخِرَةِۖ ٢٧ ﴾ [إبراهيم: ٢٧]",
+    "اللهم اجعل لها لسان صدق في الآخرين، وذكرًا طيبًا لا ينقطع",
+    "﴿ رَّبِّ ٱغۡفِرۡ وَٱرۡحَمۡ وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ ١١٨ ﴾ [المؤمنون: ١١٨]",
+    "اللهم جازها بالحسنات إحسانًا، وبالسيئات عفوًا وغفرانًا، حتى تكون في بطون الألحاد مطمئنة، وعند قيام الأشهاد آمنة",
+    "اللهم اغفر لها، اللهم ثبّتها بالقول الثابت",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلۡمُتَّقِينَ فِي جَنَّٰتٖ وَعُيُونٍ ٤٥ ٱدۡخُلُوهَا بِسَلَٰمٍ ءَامِنِينَ ٤٦ وَنَزَعۡنَا مَا فِي صُدُورِهِم مِّنۡ غِلٍّ إِخۡوَٰنًا عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ ٤٧ لَا يَمَسُّهُمۡ فِيهَا نَصَبٞ وَمَا هُم مِّنۡهَا بِمُخۡرَجِينَ ٤٨ ﴾ [الحجر: ٤٥–٤٨]",
+    "اللهم اجعلها من الذين أحببتهم فأحببت لقاءهم، فأحبّوا لقاءك",
+    "﴿ رَّبَّنَآ إِنَّنَا سَمِعۡنَا مُنَادِيٗا يُنَادِي لِلۡإِيمَٰنِ أَنۡ ءَامِنُواْ بِرَبِّكُمۡ فَـَٔامَنَّاۚ رَبَّنَا فَٱغۡفِرۡ لَنَا ذُنُوبَنَا وَكَفِّرۡ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلۡأَبۡرَارِ ١٩٣ ﴾ [آل عمران: ١٩٣]",
+    "اللهم انقلها من ضيق اللحود إلى جناتك جنات الخلود، في سدر مخضود وطلح منضود وظل ممدود وماء مسكوب",
+    "السلام عليكم أهل الديار من المؤمنين والمسلمين، وإنا إن شاء الله بكم للاحقون، نسأل الله لنا ولكم العافية",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَأَمَّآ إِن كَانَ مِنَ ٱلۡمُقَرَّبِينَ ٨٨ فَرَوۡحٞ وَرَيۡحَانٞ وَجَنَّتُ نَعِيمٖ ٨٩ ﴾ [الواقعة: ٨٨–٨٩]",
+    "اللهم إن كان في صحيفتها ما يسوؤها، فامحُه برحمتك، وبدّل سيئاتها حسنات",
+    "﴿ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا ٢٨٦ ﴾ [البقرة: ٢٨٦]",
+    "اللهم إنها نزلت بك وأنت خير منزول به، وأصبحت فقيرة إلى رحمتك وأنت غني عن عذابها، فارحمها يا أرحم الراحمين",
+    "السلام على أهل الديار من المؤمنين والمسلمين، ويرحم الله المستقدمين منا والمستأخرين، وإنا إن شاء الله بكم للاحقون",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَأَصۡحَٰبُ ٱلۡيَمِينِ مَآ أَصۡحَٰبُ ٱلۡيَمِينِ ٢٧ فِي سِدۡرٖ مَّخۡضُودٖ ٢٨ وَطَلۡحٖ مَّنضُودٖ ٢٩ وَظِلّٖ مَّمۡدُودٖ ٣٠ وَمَآءٖ مَّسۡكُوبٖ ٣١ وَفَٰكِهَةٖ كَثِيرَةٖ ٣٢ لَّا مَقۡطُوعَةٖ وَلَا مَمۡنُوعَةٖ ٣٣ وَفُرُشٖ مَّرۡفُوعَةٍ ٣٤ ﴾ [الواقعة: ٢٧–٣٤]",
+    "اللهم اجعل آخر عهدها بالدنيا شهادة أن لا إله إلا الله، وأول عهدها بالآخرة رحمتك",
+    "﴿ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ ٢٠١ ﴾ [البقرة: ٢٠١]",
+    "اللهم اجعلها في بطن القبر مطمئنة، وعند قيام الأشهاد آمنة، وبجود رضوانك واثقة، وإلى أعلى درجاتك سابقة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِيَمِينِهِۦ ٧ فَسَوۡفَ يُحَاسَبُ حِسَابٗا يَسِيرٗا ٨ وَيَنقَلِبُ إِلَىٰٓ أَهۡلِهِۦ مَسۡرُورٗا ٩ ﴾ [الانشقاق: ٧–٩]",
+    "اللهم لا تعذّب وجهًا سجد لك، ولا لسانًا ذكرك، ولا قلبًا أحبّك",
+    "﴿ رَبَّنَآ إِنَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ ٱلنَّارِ ١٦ ﴾ [آل عمران: ١٦]",
+    "اللهم يمّن كتابها، ويسّر حسابها، وثقّل بالحسنات ميزانها، وثبّت على الصراط أقدامها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلَّذِينَ سَبَقَتۡ لَهُم مِّنَّا ٱلۡحُسۡنَىٰٓ أُوْلَٰٓئِكَ عَنۡهَا مُبۡعَدُونَ ١٠١ لَا يَسۡمَعُونَ حَسِيسَهَاۖ وَهُمۡ فِي مَا ٱشۡتَهَتۡ أَنفُسُهُمۡ خَٰلِدُونَ ١٠٢ لَا يَحۡزُنُهُمُ ٱلۡفَزَعُ ٱلۡأَكۡبَرُ وَتَتَلَقَّىٰهُمُ ٱلۡمَلَٰٓئِكَةُ هَٰذَا يَوۡمُكُمُ ٱلَّذِي كُنتُمۡ تُوعَدُونَ ١٠٣ ﴾ [الأنبياء: ١٠١–١٠٣]",
+    "اللهم وسّع لها في رزقها في قبرها كما كنت توسّع عليها في الدنيا",
+    "﴿ رَبَّنَا ٱصۡرِفۡ عَنَّا عَذَابَ جَهَنَّمَۖ إِنَّ عَذَابَهَا كَانَ غَرَامًا ٦٥ ﴾ [الفرقان: ٦٥]",
+    "اللهم أظلّها تحت ظل عرشك يوم لا ظل إلا ظلك، واسقها من حوض نبيك ﷺ شربة هنيئة لا تظمأ بعدها أبدًا",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ قِيلَ ٱدۡخُلِ ٱلۡجَنَّةَۖ قَالَ يَٰلَيۡتَ قَوۡمِي يَعۡلَمُونَ ٢٦ بِمَا غَفَرَ لِي رَبِّي وَجَعَلَنِي مِنَ ٱلۡمُكۡرَمِينَ ٢٧ ﴾ [يس: ٢٦–٢٧]",
+    "اللهم اجعل ليلها في القبر نهارًا، ووحشتها أُنسًا، وضيقه سعة",
+    "﴿ رَبَّنَآ أَتۡمِمۡ لَنَا نُورَنَا وَٱغۡفِرۡ لَنَآۖ إِنَّكَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ ٨ ﴾ [التحريم: ٨]",
+    "اللهم اجعلها من الذين سعدوا في الجنة، خالدة فيها ما دامت السماوات والأرض",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَأَمَّا مَنۡ أُوتِيَ كِتَٰبَهُۥ بِيَمِينِهِۦ فَيَقُولُ هَآؤُمُ ٱقۡرَءُواْ كِتَٰبِيَهۡ ١٩ إِنِّي ظَنَنتُ أَنِّي مُلَٰقٍ حِسَابِيَهۡ ٢٠ فَهُوَ فِي عِيشَةٖ رَّاضِيَةٖ ٢١ فِي جَنَّةٍ عَالِيَةٖ ٢٢ قُطُوفُهَا دَانِيَةٞ ٢٣ كُلُواْ وَٱشۡرَبُواْ هَنِيٓـَٔۢا بِمَآ أَسۡلَفۡتُمۡ فِي ٱلۡأَيَّامِ ٱلۡخَالِيَةِ ٢٤ ﴾ [الحاقة: ١٩–٢٤]",
+    "اللهم أرسل إليها في قبرها نسيم الجنة وطيبها، حتى تقول: رب أقم الساعة",
+    "﴿ رَبَّنَا ظَلَمۡنَآ أَنفُسَنَا وَإِن لَّمۡ تَغۡفِرۡ لَنَا وَتَرۡحَمۡنَا لَنَكُونَنَّ مِنَ ٱلۡخَٰسِرِينَ ٢٣ ﴾ [الأعراف: ٢٣]",
+    "اللهم أكرم نُزُلها، وأحسن مثواها، وارفع منزلتها في عليين مع الذين أنعمت عليهم من النبيين والصديقين والشهداء والصالحين",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَوَقَىٰهُمُ ٱللَّهُ شَرَّ ذَٰلِكَ ٱلۡيَوۡمِ وَلَقَّىٰهُمۡ نَضۡرَةٗ وَسُرُورٗا ١١ وَجَزَىٰهُم بِمَا صَبَرُواْ جَنَّةٗ وَحَرِيرٗا ١٢ مُّتَّكِـِٔينَ فِيهَا عَلَى ٱلۡأَرَآئِكِۖ لَا يَرَوۡنَ فِيهَا شَمۡسٗا وَلَا زَمۡهَرِيرٗا ١٣ وَدَانِيَةً عَلَيۡهِمۡ ظِلَٰلُهَا وَذُلِّلَتۡ قُطُوفُهَا تَذۡلِيلٗا ١٤ ﴾ [الإنسان: ١١–١٤]",
+    "اللهم اجعلها تنام في قبرها نومة العروس، لا يوقظها إلا أحبّ أهلها إليها",
+    "﴿ رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةًۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ ٨ ﴾ [آل عمران: ٨]",
+    "اللهم إنها كانت تشهد أن لا إله إلا أنت وأن محمدًا عبدك ورسولك، وأنت أعلم بها منا، فاغفر لها وارحمها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ جَزَآؤُهُمۡ عِندَ رَبِّهِمۡ جَنَّٰتُ عَدۡنٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَآ أَبَدٗاۖ رَّضِيَ ٱللَّهُ عَنۡهُمۡ وَرَضُواْ عَنۡهُۚ ذَٰلِكَ لِمَنۡ خَشِيَ رَبَّهُۥ ٨ ﴾ [البينة: ٨]",
+    "اللهم اجعلها من الذين لا خوف عليهم ولا هم يحزنون",
+    "﴿ رَبَّنَا وَءَاتِنَا مَا وَعَدتَّنَا عَلَىٰ رُسُلِكَ وَلَا تُخۡزِنَا يَوۡمَ ٱلۡقِيَٰمَةِۖ إِنَّكَ لَا تُخۡلِفُ ٱلۡمِيعَادَ ١٩٤ ﴾ [آل عمران: ١٩٤]",
+    "اللهم أبدلها بالدنيا جنة عرضها السماوات والأرض، وبالتراب نورًا، وبالوحدة أُنسًا لا ينقطع",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ يَهۡدِيهِمۡ رَبُّهُم بِإِيمَٰنِهِمۡۖ تَجۡرِي مِن تَحۡتِهِمُ ٱلۡأَنۡهَٰرُ فِي جَنَّٰتِ ٱلنَّعِيمِ ٩ دَعۡوَىٰهُمۡ فِيهَا سُبۡحَٰنَكَ ٱللَّهُمَّ وَتَحِيَّتُهُمۡ فِيهَا سَلَٰمٞۚ وَءَاخِرُ دَعۡوَىٰهُمۡ أَنِ ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ ١٠ ﴾ [يونس: ٩–١٠]",
+    "اللهم اجعلها ممن يُنادى يوم القيامة: ادخلوا الجنة لا خوف عليكم ولا أنتم تحزنون",
+    "﴿ رَبَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَا وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ ١٠٩ ﴾ [المؤمنون: ١٠٩]",
+    "اللهم اغفر لها ذنوبها كلها، دِقّها وجِلّها، أولها وآخرها، علانيتها وسرّها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ جَنَّٰتُ عَدۡنٖ يَدۡخُلُونَهَا يُحَلَّوۡنَ فِيهَا مِنۡ أَسَاوِرَ مِن ذَهَبٖ وَلُؤۡلُؤٗاۖ وَلِبَاسُهُمۡ فِيهَا حَرِيرٞ ٣٣ وَقَالُواْ ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِيٓ أَذۡهَبَ عَنَّا ٱلۡحَزَنَۖ إِنَّ رَبَّنَا لَغَفُورٞ شَكُورٌ ٣٤ ٱلَّذِيٓ أَحَلَّنَا دَارَ ٱلۡمُقَامَةِ مِن فَضۡلِهِۦ لَا يَمَسُّنَا فِيهَا نَصَبٞ وَلَا يَمَسُّنَا فِيهَا لُغُوبٞ ٣٥ ﴾ [فاطر: ٣٣–٣٥]",
+    "اللهم احشرها مع النبيين والصديقين والشهداء والصالحين، وحسن أولئك رفيقًا",
+    "﴿ رَبِّ قَدۡ ءَاتَيۡتَنِي مِنَ ٱلۡمُلۡكِ وَعَلَّمۡتَنِي مِن تَأۡوِيلِ ٱلۡأَحَادِيثِۚ فَاطِرَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ أَنتَ وَلِيِّۦ فِي ٱلدُّنۡيَا وَٱلۡأٓخِرَةِۖ تَوَفَّنِي مُسۡلِمٗا وَأَلۡحِقۡنِي بِٱلصَّٰلِحِينَ ١٠١ ﴾ [يوسف: ١٠١]",
+    "اللهم إن كانت محسنة فزد في حسناتها، وإن كانت مسيئة فتجاوز عن سيئاتها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَسِيقَ ٱلَّذِينَ ٱتَّقَوۡاْ رَبَّهُمۡ إِلَى ٱلۡجَنَّةِ زُمَرًاۖ حَتَّىٰٓ إِذَا جَآءُوهَا وَفُتِحَتۡ أَبۡوَٰبُهَا وَقَالَ لَهُمۡ خَزَنَتُهَا سَلَٰمٌ عَلَيۡكُمۡ طِبۡتُمۡ فَٱدۡخُلُوهَا خَٰلِدِينَ ٧٣ وَقَالُواْ ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي صَدَقَنَا وَعۡدَهُۥ وَأَوۡرَثَنَا ٱلۡأَرۡضَ نَتَبَوَّأُ مِنَ ٱلۡجَنَّةِ حَيۡثُ نَشَآءُۖ فَنِعۡمَ أَجۡرُ ٱلۡعَٰمِلِينَ ٧٤ ﴾ [الزمر: ٧٣–٧٤]",
+    "اللهم اجعلها من أهل اليمين، ومن الذين يُعطَون كتبهم بأيمانهم",
+    "﴿ وَٱجۡعَلۡنِي مِن وَرَثَةِ جَنَّةِ ٱلنَّعِيمِ ٨٥ ﴾ [الشعراء: ٨٥]",
+    "اللهم أعذها من عذاب القبر ومن عذاب النار، ومن كل هول يوم القيامة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلۡمُتَّقِينَ فِي جَنَّٰتٖ وَنَهَرٖ ٥٤ فِي مَقۡعَدِ صِدۡقٍ عِندَ مَلِيكٖ مُّقۡتَدِرِۭ ٥٥ ﴾ [القمر: ٥٤–٥٥]",
+    "اللهم ارحمها رحمة تغنيها عن رحمة من سواك",
+    "﴿ وَلَا تُخۡزِنِي يَوۡمَ يُبۡعَثُونَ ٨٧ يَوۡمَ لَا يَنفَعُ مَالٞ وَلَا بَنُونَ ٨٨ إِلَّا مَنۡ أَتَى ٱللَّهَ بِقَلۡبٖ سَلِيمٖ ٨٩ ﴾ [الشعراء: ٨٧–٨٩]",
+    "اللهم اجعل الأرض عليها خفيفة، واجعل قبرها نورًا وسعة وراحة إلى يوم يبعثون",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلۡأَبۡرَارَ لَفِي نَعِيمٍ ٢٢ عَلَى ٱلۡأَرَآئِكِ يَنظُرُونَ ٢٣ تَعۡرِفُ فِي وُجُوهِهِمۡ نَضۡرَةَ ٱلنَّعِيمِ ٢٤ يُسۡقَوۡنَ مِن رَّحِيقٖ مَّخۡتُومٍ ٢٥ خِتَٰمُهُۥ مِسۡكٞۚ وَفِي ذَٰلِكَ فَلۡيَتَنَافَسِ ٱلۡمُتَنَٰفِسُونَ ٢٦ ﴾ [المطففين: ٢٢–٢٦]",
+    "اللهم اغفر لها مغفرة لا تغادر ذنبًا، وارحمها رحمة لا تبقي حزنًا",
+    "﴿ رَبِّ أَوۡزِعۡنِيٓ أَنۡ أَشۡكُرَ نِعۡمَتَكَ ٱلَّتِيٓ أَنۡعَمۡتَ عَلَيَّ وَعَلَىٰ وَٰلِدَيَّ وَأَنۡ أَعۡمَلَ صَٰلِحٗا تَرۡضَىٰهُ وَأَصۡلِحۡ لِي فِي ذُرِّيَّتِيٓۖ إِنِّي تُبۡتُ إِلَيۡكَ وَإِنِّي مِنَ ٱلۡمُسۡلِمِينَ ١٥ ﴾ [الأحقاف: ١٥]",
+    "اللهم اجزها عن أولادها وأهلها خير الجزاء، واجعل كل خير زرعته فيهم صدقة جارية لها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ كَانَتۡ لَهُمۡ جَنَّٰتُ ٱلۡفِرۡدَوۡسِ نُزُلًا ١٠٧ خَٰلِدِينَ فِيهَا لَا يَبۡغُونَ عَنۡهَا حِوَلٗا ١٠٨ ﴾ [الكهف: ١٠٧–١٠٨]",
+    "اللهم ارزقها عيشة راضية، في جنة عالية، قطوفها دانية",
+    "﴿ رَبَّنَا تَقَبَّلۡ مِنَّآۖ إِنَّكَ أَنتَ ٱلسَّمِيعُ ٱلۡعَلِيمُ ١٢٧ ﴾ [البقرة: ١٢٧]",
+    "اللهم بلّغها ثواب كل آية قرأناها، وكل تسبيحة قلناها، وكل صدقة أخرجناها عنها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ أَصۡحَٰبَ ٱلۡجَنَّةِ ٱلۡيَوۡمَ فِي شُغُلٖ فَٰكِهُونَ ٥٥ هُمۡ وَأَزۡوَٰجُهُمۡ فِي ظِلَٰلٍ عَلَى ٱلۡأَرَآئِكِ مُتَّكِـُٔونَ ٥٦ لَهُمۡ فِيهَا فَٰكِهَةٞ وَلَهُم مَّا يَدَّعُونَ ٥٧ سَلَٰمٞ قَوۡلٗا مِّن رَّبّٖ رَّحِيمٖ ٥٨ ﴾ [يس: ٥٥–٥٨]",
+    "اللهم اجعلها تتنعّم في قبرها بما قدّمت، وبما يصلها من دعاء أحبّتها",
+    "﴿ رَبَّنَآ أَفۡرِغۡ عَلَيۡنَا صَبۡرٗا وَتَوَفَّنَا مُسۡلِمِينَ ١٢٦ ﴾ [الأعراف: ١٢٦]",
+    "اللهم إنها في حاجة إلى رحمتك، وأنت أهل الرحمة والمغفرة، فلا تحرمها رحمتك يا كريم",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَأَمَّا مَن ثَقُلَتۡ مَوَٰزِينُهُۥ ٦ فَهُوَ فِي عِيشَةٖ رَّاضِيَةٖ ٧ ﴾ [القارعة: ٦–٧]",
+    "اللهم اجعل مكانها في الجنة قريبًا من نبيك ﷺ، وأمهات المؤمنين رضي الله عنهن",
+    "﴿ رَبَّنَآ ءَاتِنَا مِن لَّدُنكَ رَحۡمَةٗ وَهَيِّئۡ لَنَا مِنۡ أَمۡرِنَا رَشَدٗا ١٠ ﴾ [الكهف: ١٠]",
+    "اللهم اجعل ما أصابها من مرض وألم في الدنيا كفّارة لها وطهورًا ورفعة في درجاتها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَلِمَنۡ خَافَ مَقَامَ رَبِّهِۦ جَنَّتَانِ ٤٦ فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ ٤٧ ذَوَاتَآ أَفۡنَانٖ ٤٨ ﴾ [الرحمن: ٤٦–٤٨]",
+    "اللهم اجعلها مع مريم بنت عمران، وآسية امرأة فرعون، وخديجة وفاطمة، في جنات النعيم",
+    "﴿ رَبَّنَا مَا خَلَقۡتَ هَٰذَا بَٰطِلٗا سُبۡحَٰنَكَ فَقِنَا عَذَابَ ٱلنَّارِ ١٩١ ﴾ [آل عمران: ١٩١]",
+    "اللهم اجمعنا بها في جنتك، على سرر متقابلين، لا نصب فيها ولا حزن",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلۡمُتَّقِينَ فِي جَنَّٰتٖ وَنَعِيمٖ ١٧ فَٰكِهِينَ بِمَآ ءَاتَىٰهُمۡ رَبُّهُمۡ وَوَقَىٰهُمۡ رَبُّهُمۡ عَذَابَ ٱلۡجَحِيمِ ١٨ كُلُواْ وَٱشۡرَبُواْ هَنِيٓـَٔۢا بِمَا كُنتُمۡ تَعۡمَلُونَ ١٩ مُتَّكِـِٔينَ عَلَىٰ سُرُرٖ مَّصۡفُوفَةٖۖ وَزَوَّجۡنَٰهُم بِحُورٍ عِينٖ ٢٠ ﴾ [الطور: ١٧–٢٠]",
+    "اللهم ارحم غربتها في قبرها، وآنس وحدتها، وارحم وحشتها، وارحم يوم تقف بين يديك",
+    "﴿ رَبَّنَآ ءَامَنَّا بِمَآ أَنزَلۡتَ وَٱتَّبَعۡنَا ٱلرَّسُولَ فَٱكۡتُبۡنَا مَعَ ٱلشَّٰهِدِينَ ٥٣ ﴾ [آل عمران: ٥٣]",
+    "اللهم صبّر أهلها وأحبّتها، واجعلهم برّة بها، يدعون لها ويتصدقون عنها ما عاشوا",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَعَدَ ٱللَّهُ ٱلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَا وَمَسَٰكِنَ طَيِّبَةٗ فِي جَنَّٰتِ عَدۡنٖۚ وَرِضۡوَٰنٞ مِّنَ ٱللَّهِ أَكۡبَرُۚ ذَٰلِكَ هُوَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ ٧٢ ﴾ [التوبة: ٧٢]",
+    "اللهم اجعل مثواها الجنة، وحرّم جسدها على النار",
+    "اللهم اغفر لحيّنا وميّتنا، وارحمها وجميع موتى المسلمين، الذين شهدوا لك بالوحدانية ولنبيك بالرسالة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يَوۡمَ تَرَى ٱلۡمُؤۡمِنِينَ وَٱلۡمُؤۡمِنَٰتِ يَسۡعَىٰ نُورُهُم بَيۡنَ أَيۡدِيهِمۡ وَبِأَيۡمَٰنِهِمۖ بُشۡرَىٰكُمُ ٱلۡيَوۡمَ جَنَّٰتٞ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَاۚ ذَٰلِكَ هُوَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ ١٢ ﴾ [الحديد: ١٢]",
+    "اللهم اجعل عفوك أوسع لها من ذنوبها، ورحمتك أرجى لها من عملها",
+    "اللهم اجعل قبرها أوسع مما كانت تتمنى في الدنيا، وأنور من شمس النهار، وأطيب من ريح المسك",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَمَن يُطِعِ ٱللَّهَ وَٱلرَّسُولَ فَأُوْلَٰٓئِكَ مَعَ ٱلَّذِينَ أَنۡعَمَ ٱللَّهُ عَلَيۡهِم مِّنَ ٱلنَّبِيِّـۧنَ وَٱلصِّدِّيقِينَ وَٱلشُّهَدَآءِ وَٱلصَّٰلِحِينَۚ وَحَسُنَ أُوْلَٰٓئِكَ رَفِيقٗا ٦٩ ذَٰلِكَ ٱلۡفَضۡلُ مِنَ ٱللَّهِۚ وَكَفَىٰ بِٱللَّهِ عَلِيمٗا ٧٠ ﴾ [النساء: ٦٩–٧٠]",
+    "اللهم يا من وسعت رحمته كل شيء، ارحم سعدية أمين مهنى برحمتك التي وسعت كل شيء",
+    "اللهم لقّنها حجتها، وثبّت لسانها عند السؤال، واجعلها تقول: ربي الله، وديني الإسلام، ونبيي محمد ﷺ",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يَٰعِبَادِ لَا خَوۡفٌ عَلَيۡكُمُ ٱلۡيَوۡمَ وَلَآ أَنتُمۡ تَحۡزَنُونَ ٦٨ ٱلَّذِينَ ءَامَنُواْ بِـَٔايَٰتِنَا وَكَانُواْ مُسۡلِمِينَ ٦٩ ٱدۡخُلُواْ ٱلۡجَنَّةَ أَنتُمۡ وَأَزۡوَٰجُكُمۡ تُحۡبَرُونَ ٧٠ يُطَافُ عَلَيۡهِم بِصِحَافٖ مِّن ذَهَبٖ وَأَكۡوَابٖۖ وَفِيهَا مَا تَشۡتَهِيهِ ٱلۡأَنفُسُ وَتَلَذُّ ٱلۡأَعۡيُنُۖ وَأَنتُمۡ فِيهَا خَٰلِدُونَ ٧١ وَتِلۡكَ ٱلۡجَنَّةُ ٱلَّتِيٓ أُورِثۡتُمُوهَا بِمَا كُنتُمۡ تَعۡمَلُونَ ٧٢ لَكُمۡ فِيهَا فَٰكِهَةٞ كَثِيرَةٞ مِّنۡهَا تَأۡكُلُونَ ٧٣ ﴾ [الزخرف: ٦٨–٧٣]",
+    "اللهم إنها كانت تحب الخير لغيرها، فأوصل إليها الخير كله",
+    "اللهم افتح لها في قبرها بابًا إلى الجنة، يأتيها منه روحها وريحانها ونعيمها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَأُزۡلِفَتِ ٱلۡجَنَّةُ لِلۡمُتَّقِينَ غَيۡرَ بَعِيدٍ ٣١ هَٰذَا مَا تُوعَدُونَ لِكُلِّ أَوَّابٍ حَفِيظٖ ٣٢ مَّنۡ خَشِيَ ٱلرَّحۡمَٰنَ بِٱلۡغَيۡبِ وَجَآءَ بِقَلۡبٖ مُّنِيبٍ ٣٣ ٱدۡخُلُوهَا بِسَلَٰمٖۖ ذَٰلِكَ يَوۡمُ ٱلۡخُلُودِ ٣٤ لَهُم مَّا يَشَآءُونَ فِيهَا وَلَدَيۡنَا مَزِيدٞ ٣٥ ﴾ [ق: ٣١–٣٥]",
+    "اللهم كل من دعا لها، فاكتب له مثل أجره، واجعل دعاءه مقبولًا",
+    "اللهم اجعل عملها الصالح يأتيها في قبرها في أحسن صورة، يؤنسها ويبشّرها برحمتك",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلۡمُتَّقِينَ فِي مَقَامٍ أَمِينٖ ٥١ فِي جَنَّٰتٖ وَعُيُونٖ ٥٢ يَلۡبَسُونَ مِن سُندُسٖ وَإِسۡتَبۡرَقٖ مُّتَقَٰبِلِينَ ٥٣ كَذَٰلِكَ وَزَوَّجۡنَٰهُم بِحُورٍ عِينٖ ٥٤ يَدۡعُونَ فِيهَا بِكُلِّ فَٰكِهَةٍ ءَامِنِينَ ٥٥ لَا يَذُوقُونَ فِيهَا ٱلۡمَوۡتَ إِلَّا ٱلۡمَوۡتَةَ ٱلۡأُولَىٰۖ وَوَقَىٰهُمۡ عَذَابَ ٱلۡجَحِيمِ ٥٦ فَضۡلٗا مِّن رَّبِّكَۚ ذَٰلِكَ هُوَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ ٥٧ ﴾ [الدخان: ٥١–٥٧]",
+    "اللهم اجمع بينها وبين من تحب في الجنة، ولا تفرّق بينهم أبدًا",
+    "اللهم ارحم عينًا سهرت على أولادها، ويدًا تعبت في بيتها، وقلبًا دعا لأحبّته كثيرًا",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وُجُوهٞ يَوۡمَئِذٖ نَّاعِمَةٞ ٨ لِّسَعۡيِهَا رَاضِيَةٞ ٩ فِي جَنَّةٍ عَالِيَةٖ ١٠ لَّا تَسۡمَعُ فِيهَا لَٰغِيَةٗ ١١ فِيهَا عَيۡنٞ جَارِيَةٞ ١٢ فِيهَا سُرُرٞ مَّرۡفُوعَةٞ ١٣ وَأَكۡوَابٞ مَّوۡضُوعَةٞ ١٤ وَنَمَارِقُ مَصۡفُوفَةٞ ١٥ وَزَرَابِيُّ مَبۡثُوثَةٌ ١٦ ﴾ [الغاشية: ٨–١٦]",
+    "اللهم إنها كانت تقول: «يا رب»، فقل لها: لبيك عبدتي، ادخلي جنتي",
+    "اللهم ارحم أمًّا كانت تخاف على أولادها أكثر من نفسها، فأمّنها يوم الفزع الأكبر",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ لِلۡمُتَّقِينَ مَفَازًا ٣١ حَدَآئِقَ وَأَعۡنَٰبٗا ٣٢ وَكَوَاعِبَ أَتۡرَابٗا ٣٣ وَكَأۡسٗا دِهَاقٗا ٣٤ لَّا يَسۡمَعُونَ فِيهَا لَغۡوٗا وَلَا كِذَّٰبٗا ٣٥ جَزَآءٗ مِّن رَّبِّكَ عَطَآءً حِسَابٗا ٣٦ ﴾ [النبأ: ٣١–٣٦]",
+    "اللهم ثقّل ميزانها بكل ذكر يُذكر هنا، وكل آية تُتلى، وكل دعاء يُدعى",
+    "اللهم كما صبرت في الدنيا على التعب، أرحها في الآخرة راحة لا تعب بعدها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِلَّا عِبَادَ ٱللَّهِ ٱلۡمُخۡلَصِينَ ٤٠ أُوْلَٰٓئِكَ لَهُمۡ رِزۡقٞ مَّعۡلُومٞ ٤١ فَوَٰكِهُ وَهُم مُّكۡرَمُونَ ٤٢ فِي جَنَّٰتِ ٱلنَّعِيمِ ٤٣ عَلَىٰ سُرُرٖ مُّتَقَٰبِلِينَ ٤٤ يُطَافُ عَلَيۡهِم بِكَأۡسٖ مِّن مَّعِينِۭ ٤٥ بَيۡضَآءَ لَذَّةٖ لِّلشَّٰرِبِينَ ٤٦ لَا فِيهَا غَوۡلٞ وَلَا هُمۡ عَنۡهَا يُنزَفُونَ ٤٧ وَعِندَهُمۡ قَٰصِرَٰتُ ٱلطَّرۡفِ عِينٞ ٤٨ كَأَنَّهُنَّ بَيۡضٞ مَّكۡنُونٞ ٤٩ ﴾ [الصافات: ٤٠–٤٩]",
+    "اللهم اجعل قبرها مستراحًا لها من نصب الدنيا وتعبها",
+    "اللهم اجعل لها في كل يوم يمرّ عليها في قبرها نورًا جديدًا ورحمة جديدة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يَوۡمَ نَحۡشُرُ ٱلۡمُتَّقِينَ إِلَى ٱلرَّحۡمَٰنِ وَفۡدٗا ٨٥ ﴾ [مريم: ٨٥]",
+    "اللهم ارحمها في ضعفها، واغفر لها في سهوها، وتجاوز عنها في غفلتها",
+    "اللهم اجعل دعاءنا لها هدية تصلها في قبرها، تفرح بها وتقرّ عينها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ أُوْلَٰٓئِكَ يُجۡزَوۡنَ ٱلۡغُرۡفَةَ بِمَا صَبَرُواْ وَيُلَقَّوۡنَ فِيهَا تَحِيَّةٗ وَسَلَٰمًا ٧٥ خَٰلِدِينَ فِيهَاۚ حَسُنَتۡ مُسۡتَقَرّٗا وَمُقَامٗا ٧٦ ﴾ [الفرقان: ٧٥–٧٦]",
+    "اللهم أعتقها من النار، وأعتق رقابنا ورقاب آبائنا وأمهاتنا من النار",
+    "اللهم اجعلها من الآمنين يوم البعث، ومن الضاحكين المستبشرين يوم يقوم الناس لرب العالمين",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَلَا تَعۡلَمُ نَفۡسٞ مَّآ أُخۡفِيَ لَهُم مِّن قُرَّةِ أَعۡيُنٖ جَزَآءَۢ بِمَا كَانُواْ يَعۡمَلُونَ ١٧ ﴾ [السجدة: ١٧]",
+    "اللهم اجعلها ممن ترضى عنهم فلا تسخط عليهم أبدًا",
+    "اللهم اجعل وجهها يوم القيامة مسفرًا ضاحكًا مستبشرًا",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ يَغۡفِرۡ لَكُمۡ ذُنُوبَكُمۡ وَيُدۡخِلۡكُمۡ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ وَمَسَٰكِنَ طَيِّبَةٗ فِي جَنَّٰتِ عَدۡنٖۚ ذَٰلِكَ ٱلۡفَوۡزُ ٱلۡعَظِيمُ ١٢ ﴾ [الصف: ١٢]",
+    "اللهم بيّض وجهها يوم تبيضّ وجوه وتسودّ وجوه",
+    "اللهم أعطها كتابها بيمينها، وحاسبها حسابًا يسيرًا، واقلبها إلى أهلها في الجنة مسرورة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَأَمَّا مَنۡ خَافَ مَقَامَ رَبِّهِۦ وَنَهَى ٱلنَّفۡسَ عَنِ ٱلۡهَوَىٰ ٤٠ فَإِنَّ ٱلۡجَنَّةَ هِيَ ٱلۡمَأۡوَىٰ ٤١ ﴾ [النازعات: ٤٠–٤١]",
+    "اللهم أجرها من فتنة القبر، ومن ضمّته، ومن ظلمته، ومن وحشته",
+    "اللهم مُرّ بها على الصراط كالبرق الخاطف، ولا تجعل قدمها تزلّ يوم تزلّ الأقدام",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ لَهُمۡ جَنَّٰتٞ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُۚ ذَٰلِكَ ٱلۡفَوۡزُ ٱلۡكَبِيرُ ١١ ﴾ [البروج: ١١]",
+    "اللهم اجعل لها نورًا يسعى بين يديها وبأيمانها يوم القيامة",
+    "اللهم اجعلها في جوار نبيك محمد ﷺ في الفردوس الأعلى، وأسعدها برؤيته",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ إِنَّ ٱللَّهَ يُدۡخِلُ ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ جَنَّٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ يُحَلَّوۡنَ فِيهَا مِنۡ أَسَاوِرَ مِن ذَهَبٖ وَلُؤۡلُؤٗاۖ وَلِبَاسُهُمۡ فِيهَا حَرِيرٞ ٢٣ ﴾ [الحج: ٢٣]",
+    "اللهم اجعلها من المتقين في جنات ونعيم، وارزقها النعيم المقيم",
+    "اللهم متّعها بالنظر إلى وجهك الكريم في غير ضرّاء مضرّة ولا فتنة مضلّة",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَنَزَعۡنَا مَا فِي صُدُورِهِم مِّنۡ غِلّٖ تَجۡرِي مِن تَحۡتِهِمُ ٱلۡأَنۡهَٰرُۖ وَقَالُواْ ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي هَدَىٰنَا لِهَٰذَا وَمَا كُنَّا لِنَهۡتَدِيَ لَوۡلَآ أَنۡ هَدَىٰنَا ٱللَّهُۖ لَقَدۡ جَآءَتۡ رُسُلُ رَبِّنَا بِٱلۡحَقِّۖ وَنُودُوٓاْ أَن تِلۡكُمُ ٱلۡجَنَّةُ أُورِثۡتُمُوهَا بِمَا كُنتُمۡ تَعۡمَلُونَ ٤٣ ﴾ [الأعراف: ٤٣]",
+    "اللهم اجعلها في ظل رحمتك، في يوم كان مقداره خمسين ألف سنة",
+    "اللهم إنها كانت تصلي لك وتسجد، فاجعل سجودها نورًا لها في قبرها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ قُلۡ أَؤُنَبِّئُكُم بِخَيۡرٖ مِّن ذَٰلِكُمۡۖ لِلَّذِينَ ٱتَّقَوۡاْ عِندَ رَبِّهِمۡ جَنَّٰتٞ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ خَٰلِدِينَ فِيهَا وَأَزۡوَٰجٞ مُّطَهَّرَةٞ وَرِضۡوَٰنٞ مِّنَ ٱللَّهِۗ وَٱللَّهُ بَصِيرُۢ بِٱلۡعِبَادِ ١٥ ﴾ [آل عمران: ١٥]",
+    "اللهم أبدلها عن الدنيا التي فارقتها خيرًا منها، وعن الأحبة الذين تركتهم أحبة في الجنة",
+    "اللهم كل خطوة مشتها إلى طاعة، وكل كلمة طيبة قالتها، اجعلها نورًا بين يديها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ لِّلَّذِينَ أَحۡسَنُواْ ٱلۡحُسۡنَىٰ وَزِيَادَةٞۖ وَلَا يَرۡهَقُ وُجُوهَهُمۡ قَتَرٞ وَلَا ذِلَّةٌۚ أُوْلَٰٓئِكَ أَصۡحَٰبُ ٱلۡجَنَّةِۖ هُمۡ فِيهَا خَٰلِدُونَ ٢٦ ﴾ [يونس: ٢٦]",
+    "اللهم ارزقها لذة النظر إلى وجهك، والشوق إلى لقائك، ورضوانك الأكبر",
+    "اللهم ما ترك لها أحد حقًّا عليها فأدِّه عنها من فضلك، وأرضِ عنها خصماءها",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ فَأَمَّا ٱلَّذِينَ ءَامَنُواْ وَعَمِلُواْ ٱلصَّٰلِحَٰتِ فَهُمۡ فِي رَوۡضَةٖ يُحۡبَرُونَ ١٥ ﴾ [الروم: ١٥]",
+    "اللهم اجعل الجنة جزاءها بما صبرت، وبما ربّت، وبما دعت، وبما صلّت",
+    "اللهم سامحها في كل ما قصّرت فيه، وتقبّل منها كل ما أحسنت فيه",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ وَسَارِعُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا ٱلسَّمَٰوَٰتُ وَٱلۡأَرۡضُ أُعِدَّتۡ لِلۡمُتَّقِينَ ١٣٣ ﴾ [آل عمران: ١٣٣]",
+    "اللهم اجعل كل صدقة تخرج عنها شجرة لها في الجنة، وكل تسبيحة قصرًا",
+    "اللهم ارحم ضعفها بين يديك، وتولَّها برحمتك، فإنه لا حول لها ولا قوة إلا بك",
+    "اللهم اجعلها ممن قلتَ فيهم: ﴿ سَابِقُوٓاْ إِلَىٰ مَغۡفِرَةٖ مِّن رَّبِّكُمۡ وَجَنَّةٍ عَرۡضُهَا كَعَرۡضِ ٱلسَّمَآءِ وَٱلۡأَرۡضِ أُعِدَّتۡ لِلَّذِينَ ءَامَنُواْ بِٱللَّهِ وَرُسُلِهِۦۚ ذَٰلِكَ فَضۡلُ ٱللَّهِ يُؤۡتِيهِ مَن يَشَآءُۚ وَٱللَّهُ ذُو ٱلۡفَضۡلِ ٱلۡعَظِيمِ ٢١ ﴾ [الحديد: ٢١]",
+    "اللهم أنزلها منزلًا مباركًا وأنت خير المنزلين",
+    "اللهم اجعلها ممن تقول لهم الملائكة: سلام عليكم طبتم فادخلوها خالدين",
+    "اللهم اجعل يومها في قبرها خيرًا من أيامها في الدنيا كلها",
+    "اللهم اجعل روحها في عليّين، وقبرها روضة، ومنزلها في الجنة قريبًا من رحمتك",
+    "اللهم ارحمها وارحم كل من سبقنا من أحبتنا، واجمعنا بهم في دار كرامتك",
+    "اللهم إنها ضيفتك، وأنت أكرم الأكرمين، فأكرم ضيافتها",
+    "اللهم اجعل لنا في رحيلها عبرة، وفي دعائنا لها برًّا، وفي لقائها في الجنة فرحة",
+    "اللهم إنها جاءتك بلا حول منها ولا قوة، فقابلها بعفوك وكرمك",
+    "اللهم لا تجعل هذا آخر العهد بها، واجعل موعدنا معها في الفردوس الأعلى",
+    "اللهم أنزل على قبرها الضياء والنور، والفسحة والسرور",
+    "اللهم اجعل الجنة دارها وقرارها، واجعل الحور والقصور والأنهار من نصيبها",
+    "اللهم اسقها من أنهار الجنة: من ماء غير آسن، ومن لبن لم يتغير طعمه، ومن عسل مصفّى",
+    "اللهم ألبسها من سندس الجنة وإستبرقها، وحلّها فيها أساور من ذهب ولؤلؤ",
+    "اللهم اجعلها في جنات النعيم، على سرر متقابلين، في سرور لا ينقطع",
+    "اللهم ارفع درجتها حتى تبلغ مقامات الصالحين، ولا تجعل بينها وبين الجنة حجابًا",
+    "اللهم اجعل القرآن الذي كانت تحبه شفيعًا لها، وحجة لها لا عليها",
+    "اللهم اجعل سورة الملك شفيعة لها، تجادل عنها حتى تُدخلها الجنة",
+    "اللهم اجعل الصيام الذي صامته شفيعًا لها، والصدقة التي أخرجتها ظلًّا لها",
+    "اللهم كل دمعة نزلت منها خوفًا منك، اجعلها أمانًا لها من النار"
   ];
   var STORE_DUA_LAST = "athar4-dua-last", STORE_DHIKR_LAST = "athar4-dhikr-last", DUA_HOURS = [10, 21];
   function duaRemindOn(){ return appSettings.duaRemind !== false; }
@@ -8330,6 +8683,117 @@ const EVENING_ADHKAR = [
   // generated by gen_gift.js from «حصن المسلم» (hisnmuslim.com) — [chapter, text, repeat]
   var GIFT_HISN = [["دعاء الاستفتاح","اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْني مِنْ خَطَايَايَ، بِالثَّلْجِ وَالْماءِ وَالْبَرَدِ.",1],["دعاء الاستفتاح","اللَّهُمَّ رَبَّ جِبْرَائِيلَ، وَمِيْكَائِيلَ، وَإِسْرَافِيلَ، فَاطِرَ السَّمَوَاتِ وَالأَرْضِ، عَالِمَ الغَيْبِ وَالشَّهَادَةِ أَنْتَ تَحْكُمُ بَيْنَ عِبَادِكَ فِيمَا كَانُوا فِيهِ يَخْتَلِفُونَ. اهْدِنِي لِمَا اخْتُلِفَ فِيهِ مِنَ الْحَقِّ بِإِذْنِكَ إِنَّكَ تَهْدِي مَنْ تَشَاءُ إِلَى صِرَاطٍ مُسْتَقيمٍ.",1],["دعاء الاستفتاح","اللَّهُمَّ لَكَ الْحَمْدُ، أَنْتَ نُورُ السَّمَوَاتِ وَالأَرْضِ وَمَنْ فِيهِنَّ، وَلَكَ الْحَمْدُ أَنْتَ قَيِّمُ السَّمَوَاتِ وَالأَرْضِ وَمَنْ فِيهِنَّ، وَلَكَ الْحَمْدُ أَنْتَ رَبُّ السَّمَواتِ وَالأَرْضِ وَمَنْ فِيهِنَّ وَلَكَ الْحَمْدُ لَكَ مُلْكُ السَّمَوَاتِ وَالأَرْضِ وَمَنْ فِيهِنَّ وَلَكَ الْحَمْدُ أَنْتَ مَلِكُ السَّمَوَاتِ وَالأَرْضِ وَلَكَ الْحَمْدُ أَنْتَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَلِقاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالنَّبِيُّونَ حَقٌّ، وَمحَمَّدٌ صلى الله عليه وسلم حَقٌّ، وَالسّاعَةُ حَقٌّ اللَّهُمَّ لَكَ أَسْلَمتُ، وَعَلَيْكَ تَوَكَّلْتُ، وَبِكَ آمَنْتُ، وَإِلَيْكَ أَنَبْتُ، وَبِكَ خاصَمْتُ، وَإِلَيْكَ حاكَمْتُ. فَاغْفِرْ لِي مَا قَدَّمْتُ، وَمَا أَخَّرْتُ، وَمَا أَسْرَرْتُ، وَمَا أَعْلَنْتُ وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّي أَنْتَ المُقَدِّمُ، وَأَنْتَ المُؤَخِّرُ لاَ إِلَهَ إِلاَّ أَنْتَ أَنْتَ إِلَهِي لاَ إِلَهَ إِلاَّ أَنْتَ وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ.",1],["دعاء الركوع","اللَّهُمَّ لَكَ رَكَعْتُ، وَبِكَ آمَنْتُ، وَلَكَ أَسْلَمْتُ، خَشَعَ لَكَ سَمْعِي، وَبَصَرِي، وَمُخِّي، وَعَــــظْمِي، وَعَصَبِي، وَمَا استَقَلَّتْ بِهِ قَدَمِي.",1],["دعاء الرفع من الركوع","رَبَّنَا وَلَكَ الْحَمْدُ، حَمْداً كَثيراً طَيِّباً مُبارَكاً فِيهِ.",1],["دعاء السجود","اللَّهُمَّ لَكَ سَجَدْتُ وَبِكَ آمَنْتُ، وَلَكَ أَسْلَمْتُ، سَجَدَ وَجْهِيَ لِلَّذِي خَلَقَهُ، وَصَوَّرَهُ، وَشَقَّ سَمْعَهُ وَبَصَرَهُ، تَبَارَكَ اللَّهُ أَحْسنُ الْخَالِقينَ.",1],["دعاء السجود","اللَّهُمَّ اغْفِرْ لِي ذَنْبِي كُلَّهُ: دِقَّهُ وَجِلَّهُ، وَأَوَّلَهُ وَآخِرَهُ، وَعَلاَنِيَّتَهُ وَسِرَّهُ.",1],["دعاء السجود","اللَّهُمَّ إِنِّي أَعُوذُ بِرِضَاكَ مِنْ سَخَطِكَ، وَبِمُعَافَاتِكَ مِنْ عُقوبَتِكَ، وَأَعُوذُ بِكَ مِنْكَ، لاَ أُحْصِي ثَنَاءً عَلَيْكَ، أَنْتَ كَمَا أَثْنَيْتَ عَلَى نَفْسِكَ.",1],["دعاء الجلسة بين السجدتين","رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي.",1],["دعاء الجلسة بين السجدتين","اللَّهُمَّ اغْفِرْ لِي، وَارْحَمْنِي، وَاهْدِنِي، وَاجْبُرْنِي، وَعَافِنِي، وَارْزُقْنِي، وَارْفَعْنِي.",1],["دعاء سجود التلاوة","اللَّهُمَّ اكْتُبْ لِي بِهَا عِنْدَكَ أَجْراً، وَضَعْ عَنِّي بِهَا وِزْراً، وَاجْعَلْهَا لِي عِنْدَكَ ذُخْراً، وَتَقَبَّلْهَا مِنِّي كَمَا تَقَبَّلْتَهَا مِنْ عَبْدِكَ دَاوُدَ.",1],["الصلاة على النبي بعد التشهد","اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ، وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيتَ عَلَى إِبْرَاهِيمَ، وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ.",1],["الصلاة على النبي بعد التشهد","اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى أَزْوَاجِهِ وَذُرِّيَّتِهِ، كَمَا صَلَّيْتَ عَلَى آلِ إِبْرَاهِيمَ. وَبَارِكْ عَلَى مُحَمَّدٍ وَعَلَى أَزْواجِهِ وَذُرِّيَّتِهِ، كَمَا بَارَكْتَ عَلَى آلِ إِبْرَاهِيمَ. إِنَّكَ حَمِيدٌ مَجِيدٌ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ، وَمَا أَخَّرْتُ، وَمَا أَسْرَرْتُ، وَمَا أَعْلَنْتُ، وَمَا أَسْرَفْتُ، وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّي. أَنْتَ الْمُقَدِّمُ، وَأَنْتَ الْمُؤَخِّرُ لاَ إِلَهَ إِلاَّ أَنْتَ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ، وَشُكْرِكَ، وَحُسْنِ عِبادَتِكَ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ بِعِلْمِكَ الغَيْبَ وَقُدْرَتِكَ عَلَى الْخَلقِ أَحْيِنِي مَا عَلِمْتَ الْحَيَاةَ خَيْراً لِي، وَتَوَفَّنِي إِذَا عَلِمْتَ الْوَفَاةَ خَيْراً لِي، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَشْيَتَكَ فِي الْغَيْبِ وَالشَّهَادَةِ، وَأَسْأَلُكَ كَلِمَةَ الْحَقِّ فِي الرِّضَا وَالْغَضَبِ، وَأَسْأَلُكَ الْقَصْدَ فِي الْغِنَى وَالْفَقْرِ، وَأَسْأَلُكَ نَعِيماً لاَ يَنْفَدُ، وَأَسْأَلُكَ قُرَّةَ عَيْنٍ لاَ تَنْقَطِعُ، وَأَسْأَلُكَ الرِّضَا بَعْدَ الْقَضَاءِ، وَأَسْــــأَلُكَ بَرْدَ الْعَيْشِ بَعْدَ الْمَوْتِ، وَأَسْأَلُكَ لَذَّةَ النَّظَرِ إِلَى وَجْهِكَ، وَالشَّوْقَ إِلَى لِقائِكَ فِي غَيرِ ضَرَّاءَ مُضِرَّةٍ، وَلاَ فِتْنَةٍ مُضِلَّةٍ، اللَّهُمَّ زَيِّنَا بِزِينَةِ الإِيمَانِ، وَاجْعَلْنَا هُدَاةً مُهْتَدِينَ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ إِنِّي أَسْأَلُكَ يَا أَللَّهُ بِأَنَّكَ الْوَاحِدُ الْأَحَدُ الصَّمَدُ الَّذِي لَمْ يَلِدْ وَلَمْ يولَدْ، وَلَمْ يَكنْ لَهُ كُفُواً أَحَدٌ، أَنْ تَغْفِرَ لِي ذُنُوبِي إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِّيمُ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدَ لَا إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، الْمَنَّانُ، يَا بَدِيعَ السَّمَوَاتِ وَالْأَرْضِ يَا ذَا الْجَلاَلِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ.",1],["الدعاء بعد التشهد الأخير قبل السلام","اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّي أَشْهَدُ أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ الْأَحَدُ الصَّمَدُ الَّذِي لَمْ يَلِدْ وَلَمْ يُولَدْ وَلَمْ يَكُنْ لَهُ كُفُواً أَحَدٌ .",1],["الأذكار بعد السلام من الصلاة","اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْماً نافِعاً، وَرِزْقاً طَيِّباً، وَعَمَلاً مُتَقَبَّلاً بَعْدَ السّلامِ مِنْ صَلاَةِ الفَجْرِ.",1],["أذكار الصباح والمساء","اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا ، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ. وإذا أمسى قال: اللَّهم بك أمسينا، وبك أصبحنا، وبك نحيا، وبك نموت، وإليك المصير.",1],["أذكار الصباح والمساء","اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلاَئِكَتِكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلاَّ أَنْتَ وَحْدَكَ لاَ شَرِيكَ لَكَ، وَأَنَّ مُحَمَّداً عَبْدُكَ وَرَسُولُكَ (أربعَ مَرَّاتٍ). وإذا أمسى قال: اللَّهم إني أمسيت...",4],["أذكار الصباح والمساء","اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ. وإذا أمسى قال: اللَّهم ما أمسى بي...",1],["أذكار الصباح والمساء","اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لاَ إِلَهَ إِلاَّ أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ، وَالفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ القَبْرِ، لاَ إِلَهَ إِلاَّ أَنْتَ (ثلاثَ مرَّاتٍ).",3],["أذكار الصباح والمساء","حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيهِ تَوَكَّلتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ (سَبْعَ مَرّاتٍ).",1],["أذكار الصباح والمساء","اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ: فِي دِينِي وَدُنْيَايَ وَأَهْلِي، وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَينِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي.",1],["أذكار الصباح والمساء","اللَّهُمَّ عَالِمَ الغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَوَاتِ وَالْأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطانِ وَشَرَكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءاً، أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ.",1],["أذكار الصباح والمساء","يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغيثُ أَصْلِحْ لِي شَأْنِيَ كُلَّهُ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.",1],["أذكار الصباح والمساء","اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبَيِّنَا مُحَمَّدٍ (عشرَ مرَّاتٍ).",10],["أذكار النوم","اللَّهُمَّ إِنَّكَ خَلَقْتَ نَفْسِي وَأَنْتَ تَوَفَّاهَا، لَكَ مَمَاتُهَا وَمَحْياهَا، إِنْ أَحْيَيْتَهَا فَاحْفَظْهَا، وَإِنْ أَمَتَّهَا فَاغْفِرْ لَهَا. اللَّهُمَّ إِنِّي أَسْأَلُكَ العَافِيَةَ.",1],["أذكار النوم","اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.",1],["أذكار النوم","اللَّهُمَّ رَبَّ السَّمَوَاتِ السَّبْعِ وَرَبَّ الأَرْضِ، وَرَبَّ الْعَرْشِ الْعَظِيمِ، رَبَّنَا وَرَبَّ كُلِّ شَيْءٍ، فَالِقَ الْحَبِّ وَالنَّوَى، وَمُنْزِلَ التَّوْرَاةِ وَالْإِنْجِيلِ، وَالْفُرْقَانِ، أَعُوذُ بِكَ مِنْ شَرِّ كُلِّ شَيْءٍ أَنْتَ آخِذٌ بِنَاصِيَتِهِ. اللَّهُمَّ أَنْتَ الأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ، وَأَنْتَ الآخِرُ فَلَيسَ بَعْدَكَ شَيْءٌ، وَأَنْتَ الظَّاهِرُ فَلَيْسَ فَوْقَكَ شَيْءٌ، وَأَنْتَ الْبَاطِنُ فَلَيْسَ دُونَكَ شَيْءٌ، اقْضِ عَنَّا الدَّيْنَ وَأَغْنِنَا مِنَ الْفَقْرِ.",1],["دعاء قنوت الوتر","اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ، وَعَافِنِي فِيمَنْ عَافَيْتَ، وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ، وَبَارِكْ لِي فِيمَا أَعْطَيْتَ، وَقِنِي شَرَّ مَا قَضَيْتَ؛ فَإِنَّكَ تَقْضِي وَلاَ يُقْضَى عَلَيْكَ، إِنَّهُ لاَ يَذِلُّ مَنْ وَالَيْتَ، وَلاَ يَعِزُّ مَنْ عَادَيْتَ، تَبارَكْتَ رَبَّنا وَتَعَالَيْتَ.",1],["دعاء قنوت الوتر","اللَّهُمَّ إِيَّاكَ نعْبُدُ، وَلَكَ نُصَلِّي وَنَسْجُدُ، وَإِلَيْكَ نَسْعَى وَنَحْفِدُ، نَرْجُو رَحْمَتَكَ، وَنَخْشَى عَذَابَكَ، إِنَّ عَذَابَكَ بِالكَافِرِينَ مُلْحَقٌ. اللَّهُمَّ إِنَّا نَسْتَعينُكَ، وَنَسْتَغْفِرُكَ، وَنُثْنِي عَلَيْكَ الْخَيْرَ، وَلاَ نَكْفُرُكَ، وَنُؤْمِنُ بِكَ، وَنَخْضَعُ لَكَ، وَنَخْلَعُ مَنْ يَكْفرُكَ.",1],["دعاء الهم والحزن","اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ، أَسْأَلُكَ بِكُــــلِّ اسْمٍ هُوَ لَكَ، سَمَّيْتَ بِهِ نَفْسَكَ، أَوْ أَنْزَلْتَهُ فِي كِتَابِكَ، أَوْ عَلَّمْتَهُ أَحَداً مِنْ خَلْقِكَ، أَوِ اسْتَأْثَرْتَ بِهِ فِي عِلْمِ الغَيْبِ عِنْدَكَ، أَنْ تَجْعَلَ القُرْآنَ رَبِيعَ قَلْبِي، وَنُورَ صَدْرِي، وَجَلاَءَ حُزْنِي، وَذَهَابَ هَمِّي.",1],["دعاء الكرب","اللَّهُمَّ رَحْمَتَكَ أَرْجُو، فَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ، وَأَصْلِحْ لِي شَأْنِي كُلَّهُ، لاَ إِلَهَ إِلاَّ أَنْتَ.",1],["دعاء الكرب","لاَ إِلَهَ إِلاَّ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظّالِمِينَ.",1],["دعاء لقاء العدو و ذي السلطان","اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِم، وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ.",1],["دعاء لقاء العدو و ذي السلطان","اللَّهُمَّ أَنْتَ عَضُدِي، وَأَنْتَ نَصِيرِي، بِكَ أَحُولُ وَبِكَ أَصُولُ، وَبِكَ أُقاتِلُ.",1],["الدعاء على العدو","اللَّهُمَّ مُنْزِلَ الْكِتَابِ، سَرِيعَ الْحِسَابِ، اهْزِمِ الأَحْزَابَ، اللَّهُمَّ اهزِمْهُمْ وَزَلْزِلْهُمْ.",1],["ما يقول من خاف قوما","اللَّهُمَّ اكْفِنِيهِمْ بِمَا شِئْتَ.",1],["دعاء قضاء الدين","اللَّهُمَّ اكْفِنِي بِحَلاَلِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكِ عَمَّنْ سِوَاكَ.",1],["دعاء من استصعب عليه أمر","اللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلاً.",1],["دعاء المريض الذي يئس من حياته","اللَّهُمَّ اغْفِرْ لِي، وَارْحَمْنِي، وَأَلْحِقْنِي بِالرَّفِيقِ الْأَعْلَى.",1],["الدعاء عند إفطار الصائم","اللَّهُمَّ إِنِّي أَسْأَلُكَ بِرَحْمَتِكَ الَّتِي وَسِعَتْ كُلَّ شَيْءٍ أَنْ تَغْفِرَ لِي.",1],["دعاء الضيف لصاحب الطعام","اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُم، وَاغْفِرْ لَهُمْ وَارْحَمْهُمْ.",1],["دعاء الخوف من الشرك","اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أُشْرِكَ بِكَ وَأَنَا أَعْلَمُ، وَأَسْتَغْفِرُكَ لِمَا لاَ أَعْلَمُ.",1],["ما يقول المسلم إذا زكي","اللَّهُمَّ لاَ تُؤَاخِذْنِي بِمَا يَقُولُونَ، وَاغْفِرْ لِي مَا لاَ يَعْلَمُونَ، وَاجْعَلْنِي خَيْراً مِمَّا يَظُّنُّونَ.",1]];
 
+  // ---------------- the gift: hadiths, and a message for how you feel right now ----------------
+  // GIFT_HADITH: sound hadiths that speak to the heart (hope, mercy, patience, Allah's nearness), each with its source;
+  // they join the year of daily gifts. GIFT_MOODS: «حاسس بإيه دلوقتي؟» in the opened gift — pick a feeling and get a
+  // message for it (an ayah, a hadith, a dua or a word), as often as you like; it does not change the day's gift.
+  var GIFT_HADITH = [
+    ["ما يُصيب المسلمَ من نَصَبٍ ولا وَصَبٍ، ولا همٍّ ولا حَزَنٍ، ولا أذًى ولا غمٍّ، حتى الشوكة يُشاكها، إلا كفّر الله بها من خطاياه", "صحيح البخاري ٥٦٤١ ومسلم ٢٥٧٣"],
+    ["عجبًا لأمر المؤمن، إن أمره كله خير، وليس ذاك لأحد إلا للمؤمن؛ إن أصابته سرّاء شكر فكان خيرًا له، وإن أصابته ضرّاء صبر فكان خيرًا له", "صحيح مسلم ٢٩٩٩"],
+    ["يقول الله تعالى: أنا عند ظنّ عبدي بي، وأنا معه إذا ذكرني، فإن ذكرني في نفسه ذكرته في نفسي، وإن ذكرني في ملأ ذكرته في ملأ خير منهم، وإن تقرّب إليّ شبرًا تقرّبت إليه ذراعًا، وإن أتاني يمشي أتيته هرولة", "صحيح البخاري ٧٤٠٥ ومسلم ٢٦٧٥"],
+    ["إن الله عز وجل يبسط يده بالليل ليتوب مسيء النهار، ويبسط يده بالنهار ليتوب مسيء الليل، حتى تطلع الشمس من مغربها", "صحيح مسلم ٢٧٥٩"],
+    ["لَلّهُ أشدّ فرحًا بتوبة عبده من أحدكم سقط على بعيره وقد أضلّه في أرض فلاة", "صحيح البخاري ٦٣٠٩"],
+    ["ينزل ربنا تبارك وتعالى كل ليلة إلى السماء الدنيا حين يبقى ثلث الليل الآخر، يقول: من يدعوني فأستجيب له؟ من يسألني فأعطيه؟ من يستغفرني فأغفر له؟", "صحيح البخاري ١١٤٥ ومسلم ٧٥٨"],
+    ["إن الله لا ينظر إلى صوركم وأموالكم، ولكن ينظر إلى قلوبكم وأعمالكم", "صحيح مسلم ٢٥٦٤"],
+    ["تبسّمك في وجه أخيك لك صدقة", "سنن الترمذي ١٩٥٦"],
+    ["المؤمن القوي خير وأحب إلى الله من المؤمن الضعيف، وفي كلٍّ خير، احرص على ما ينفعك، واستعن بالله ولا تعجز", "صحيح مسلم ٢٦٦٤"],
+    ["ما من مسلم يدعو بدعوة ليس فيها إثم ولا قطيعة رحم، إلا أعطاه الله بها إحدى ثلاث: إما أن تُعجَّل له دعوته، وإما أن يدّخرها له في الآخرة، وإما أن يصرف عنه من السوء مثلها", "مسند أحمد ١١١٣٣"],
+    ["إن ربكم تبارك وتعالى حييٌّ كريم، يستحيي من عبده إذا رفع يديه إليه أن يردّهما صِفرًا", "سنن أبي داود ١٤٨٨ والترمذي ٣٥٥٦"],
+    ["إن عِظَم الجزاء مع عِظَم البلاء، وإن الله إذا أحب قومًا ابتلاهم، فمن رضي فله الرضا", "سنن الترمذي ٢٣٩٦"],
+    ["من يُرِد الله به خيرًا يُصِب منه", "صحيح البخاري ٥٦٤٥"],
+    ["ما يزال البلاء بالمؤمن والمؤمنة في نفسه وولده وماله حتى يلقى الله وما عليه خطيئة", "سنن الترمذي ٢٣٩٩"],
+    ["قال الله تبارك وتعالى: يا ابن آدم، إنك ما دعوتني ورجوتني غفرت لك على ما كان فيك ولا أبالي", "سنن الترمذي ٣٥٤٠"],
+    ["الكلمة الطيبة صدقة", "صحيح البخاري ٢٩٨٩ ومسلم ١٠٠٩"],
+    ["أحب الأعمال إلى الله أدومها وإن قلّ", "صحيح البخاري ٦٤٦٤ ومسلم ٧٨٣"],
+    ["لا تحقرنّ من المعروف شيئًا، ولو أن تلقى أخاك بوجه طَلْق", "صحيح مسلم ٢٦٢٦"],
+    ["من نفّس عن مؤمن كربة من كرب الدنيا نفّس الله عنه كربة من كرب يوم القيامة، ومن يسّر على معسر يسّر الله عليه في الدنيا والآخرة، والله في عون العبد ما كان العبد في عون أخيه", "صحيح مسلم ٢٦٩٩"],
+    ["إذا مرض العبد أو سافر، كُتب له مثلُ ما كان يعمل مقيمًا صحيحًا", "صحيح البخاري ٢٩٩٦"],
+    ["إن لله مائة رحمة، أنزل منها رحمة واحدة بين الجن والإنس والبهائم، فبها يتعاطفون وبها يتراحمون، وأخّر الله تسعًا وتسعين رحمة يرحم بها عباده يوم القيامة", "صحيح مسلم ٢٧٥٢"],
+    ["لما قضى الله الخلق كتب في كتابه، فهو عنده فوق العرش: إن رحمتي غلبت غضبي", "صحيح البخاري ٣١٩٤ ومسلم ٢٧٥١"],
+    ["ما نقصت صدقة من مال، وما زاد الله عبدًا بعفو إلا عزًّا، وما تواضع أحد لله إلا رفعه الله", "صحيح مسلم ٢٥٨٨"],
+    ["كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن: سبحان الله وبحمده، سبحان الله العظيم", "صحيح البخاري ٦٤٠٦ ومسلم ٢٦٩٤"],
+    ["ألا أدلّك على كنز من كنوز الجنة؟ لا حول ولا قوة إلا بالله", "صحيح البخاري ٦٣٨٤ ومسلم ٢٧٠٤"],
+    ["لو أنكم تتوكلون على الله حق توكّله لرزقكم كما يرزق الطير، تغدو خِماصًا وتروح بِطانًا", "سنن الترمذي ٢٣٤٤"],
+    ["انظروا إلى من هو أسفل منكم، ولا تنظروا إلى من هو فوقكم، فهو أجدر ألا تزدروا نعمة الله عليكم", "صحيح مسلم ٢٩٦٣"],
+    ["من أصبح منكم آمنًا في سِربه، معافًى في جسده، عنده قوت يومه، فكأنما حِيزت له الدنيا", "سنن الترمذي ٢٣٤٦"],
+    ["ليس الغنى عن كثرة العَرَض، ولكن الغنى غنى النفس", "صحيح البخاري ٦٤٤٦ ومسلم ١٠٥١"],
+    ["إن الله إذا أحب عبدًا دعا جبريل فقال: إني أحب فلانًا فأحبه، فيحبه جبريل، ثم ينادي في السماء فيقول: إن الله يحب فلانًا فأحبوه، فيحبه أهل السماء، ثم يوضع له القبول في الأرض", "صحيح مسلم ٢٦٣٧"],
+    ["ما من مسلم تصيبه مصيبة فيقول ما أمره الله: إنا لله وإنا إليه راجعون، اللهم أْجُرني في مصيبتي، واخلُف لي خيرًا منها، إلا أخلف الله له خيرًا منها", "صحيح مسلم ٩١٨"],
+    ["إنك لن تدع شيئًا لله عز وجل إلا بدّلك الله به ما هو خير لك منه", "مسند أحمد ٢٣٠٧٤"],
+    ["من سلك طريقًا يلتمس فيه علمًا، سهّل الله له به طريقًا إلى الجنة", "صحيح مسلم ٢٦٩٩"],
+    ["الدعاء هو العبادة", "سنن أبي داود ١٤٧٩ والترمذي ٢٩٦٩"],
+    ["أقرب ما يكون العبد من ربه وهو ساجد، فأكثروا الدعاء", "صحيح مسلم ٤٨٢"],
+    ["احفظ الله يحفظك، احفظ الله تجده تجاهك، إذا سألت فاسأل الله، وإذا استعنت فاستعن بالله، واعلم أن الأمة لو اجتمعت على أن ينفعوك بشيء لم ينفعوك إلا بشيء قد كتبه الله لك", "سنن الترمذي ٢٥١٦"],
+    ["إن الله رفيق يحب الرفق في الأمر كله", "صحيح البخاري ٦٩٢٧ ومسلم ٢١٦٥"],
+    ["الطُّهور شطر الإيمان، والحمد لله تملأ الميزان، وسبحان الله والحمد لله تملآن ما بين السماوات والأرض", "صحيح مسلم ٢٢٣"],
+    ["خيركم من تعلّم القرآن وعلّمه", "صحيح البخاري ٥٠٢٧"],
+    ["اقرؤوا القرآن، فإنه يأتي يوم القيامة شفيعًا لأصحابه", "صحيح مسلم ٨٠٤"],
+    ["الماهر بالقرآن مع السفرة الكرام البررة، والذي يقرأ القرآن ويتتعتع فيه وهو عليه شاق له أجران", "صحيح البخاري ٤٩٣٧ ومسلم ٧٩٨"],
+    ["لا يؤمن أحدكم حتى يحب لأخيه ما يحب لنفسه", "صحيح البخاري ١٣ ومسلم ٤٥"],
+    ["من صلّى عليّ صلاة صلّى الله عليه بها عشرًا", "صحيح مسلم ٤٠٨"],
+    ["دعوة المرء المسلم لأخيه بظهر الغيب مستجابة، عند رأسه ملك موكّل، كلما دعا لأخيه بخير قال الملك الموكّل به: آمين، ولك بمثل", "صحيح مسلم ٢٧٣٣"],
+    ["إن الله كتب الحسنات والسيئات، ثم بيّن ذلك، فمن همّ بحسنة فلم يعملها كتبها الله له عنده حسنة كاملة", "صحيح البخاري ٦٤٩١ ومسلم ١٣١"],
+    ["سبق المفرِّدون، قالوا: وما المفرِّدون يا رسول الله؟ قال: الذاكرون الله كثيرًا والذاكرات", "صحيح مسلم ٢٦٧٦"],
+    ["إن أحب الكلام إلى الله: سبحان الله وبحمده", "صحيح مسلم ٢٧٣١"],
+    ["الراحمون يرحمهم الرحمن، ارحموا من في الأرض يرحمكم من في السماء", "سنن أبي داود ٤٩٤١ والترمذي ١٩٢٤"],
+  ];
+  // [kind, …]: ["a", "s:a-b"] an ayah · ["t", i] a hadith of GIFT_HADITH · ["d", text, source] a dua · ["w", text] a word
+  var GIFT_MOODS = [
+    { id: "tight", e: "😮‍💨", name: "مخنوق", kick: "رسالة ليك وانت مخنوق.. خد نفس 🤍", items: [
+      ["a", "94:5-6"], ["a", "65:2-3"], ["a", "13:28"], ["a", "20:25-28"], ["a", "21:87-88"], ["a", "6:125"],
+      ["d", "اللهم إني عبدك، ابن عبدك، ابن أمتك، ناصيتي بيدك، ماضٍ فيّ حكمك، عدلٌ فيّ قضاؤك، أسألك بكل اسم هو لك، سمّيت به نفسك، أو أنزلته في كتابك، أو علّمته أحدًا من خلقك، أو استأثرت به في علم الغيب عندك، أن تجعل القرآن ربيع قلبي، ونور صدري، وجلاء حزني، وذهاب همّي", "مسند أحمد ٣٧١٢ — قال ﷺ: ما قالها أحد إلا أذهب الله همّه"],
+      ["d", "لا إله إلا الله العظيم الحليم، لا إله إلا الله رب العرش العظيم، لا إله إلا الله رب السماوات ورب الأرض ورب العرش الكريم", "صحيح البخاري ٦٣٤٦ ومسلم ٢٧٣٠ — دعاء الكرب"],
+      ["d", "اللهم رحمتك أرجو، فلا تكلني إلى نفسي طرفة عين، وأصلح لي شأني كله، لا إله إلا أنت", "سنن أبي داود ٥٠٩٠ — دعوات المكروب"],
+      ["w", "الضيقة اللي انت فيها دي مش هتفضل.. ربنا قال «إن مع العسر يسرًا» مرتين، عشان تتأكد إن الفرج أقرب مما تتخيل. قوم اتوضّى وصلّي ركعتين وقول لربنا كل حاجة."],
+      ["w", "لما صدرك يضيق، افتكر إن يونس عليه السلام كان في ظلمات تلاتة، وقال «لا إله إلا أنت سبحانك إني كنت من الظالمين».. فربنا نجّاه. وربنا قال بعدها: «وكذلك ننجي المؤمنين» — يعني انت كمان."],
+    ] },
+    { id: "sad", e: "😢", name: "زعلان", kick: "عارفين إنك زعلان.. ودي ليك 🤍", items: [
+      ["a", "9:40"], ["a", "93:3-5"], ["a", "12:86"], ["a", "3:139"], ["a", "2:155-157"], ["a", "39:10"], ["a", "93:6-8"],
+      ["t", 0], ["t", 1], ["t", 30],
+      ["d", "اللهم إني أعوذ بك من الهم والحزن، والعجز والكسل، والبخل والجبن، وضلع الدين وغلبة الرجال", "صحيح البخاري ٦٣٦٩"],
+      ["w", "الدموع اللي بتنزل منك ربنا شايفها.. ومافيش دمعة بتضيع عنده. يعقوب عليه السلام قال «إنما أشكو بثّي وحزني إلى الله» — اشكي لربنا، هو بيسمع وبيجبر."],
+      ["w", "زعلك ده مش ضعف.. حتى النبي ﷺ زعل ودمعت عينه. بس هو علّمنا نقول: «إن العين تدمع، والقلب يحزن، ولا نقول إلا ما يرضي ربنا». ربنا يجبر بخاطرك."],
+    ] },
+    { id: "worry", e: "😟", name: "قلقان", kick: "سيبها على ربنا.. ودي رسالة تطمّنك 🤍", items: [
+      ["a", "9:51"], ["a", "65:3"], ["a", "20:46"], ["a", "3:173-174"], ["a", "26:61-62"], ["a", "8:62"], ["a", "11:6"],
+      ["t", 35], ["t", 25], ["t", 8],
+      ["a", "9:129"],
+      ["w", "اللي انت قلقان منه بكرة، ربنا موجود فيه قبلك. هو اللي دبّر كل اللي فات، وهيدبّر اللي جاي.. اعمل اللي عليك، والباقي سيبه عليه."],
+      ["w", "موسى عليه السلام كان قدامه البحر وورا فرعون، والناس قالوا «إنا لمدركون».. فقال بثقة: «كلا إن معي ربي سيهدين». قولها انت كمان."],
+    ] },
+    { id: "tired", e: "😩", name: "تعبان", kick: "ربنا يقويك ويشفيك.. خد دي 🤍", items: [
+      ["a", "26:78-80"], ["a", "2:286"], ["a", "21:83-84"], ["a", "94:7-8"], ["a", "17:82"], ["a", "29:69"],
+      ["t", 19], ["t", 13], ["t", 0],
+      ["d", "اللهم ربّ الناس، أذهب البأس، اشفِ أنت الشافي، لا شفاء إلا شفاؤك، شفاءً لا يغادر سقمًا", "صحيح البخاري ٥٧٤٣ ومسلم ٢١٩١"],
+      ["w", "تعبك مش ضايع.. كل وجع وكل إرهاق مكتوب لك أجره، والنبي ﷺ قال إن حتى الشوكة بيكفّر الله بيها. ريّح نفسك شوية، انت تستاهل."],
+      ["w", "لو جسمك تعبان وماقدرتش تعمل عباداتك زي العادة، ربنا بيكتبلك أجرها كامل زي ما كنت بتعملها وانت صحيح. ارتاح وماتلومش نفسك."],
+    ] },
+    { id: "alone", e: "💔", name: "لوحدي", kick: "انت مش لوحدك أبدًا 🤍", items: [
+      ["a", "50:16"], ["a", "2:186"], ["a", "57:4"], ["a", "20:46"], ["a", "58:7"], ["a", "8:24"],
+      ["t", 2], ["t", 5], ["t", 29],
+      ["w", "ممكن الناس تبعد، بس ربنا أقرب لك من حبل الوريد. كلّمه دلوقتي، بأي كلام، هو سامعك وفاهمك قبل ما تتكلم."],
+      ["w", "في كل ليلة، في آخر الليل، ربنا بينادي: «من يدعوني فأستجيب له؟».. يعني فيه موعد كل يوم مستنيك فيه ربنا بنفسه."],
+    ] },
+    { id: "guilty", e: "😞", name: "مقصّر", kick: "باب ربنا لسه مفتوح.. ودي ليك 🤍", items: [
+      ["a", "39:53"], ["a", "4:110"], ["a", "25:70"], ["a", "11:114"], ["a", "3:135-136"], ["a", "20:82"], ["a", "42:25"],
+      ["t", 3], ["t", 4], ["t", 14], ["t", 21],
+      ["w", "إنك حاسس بالتقصير ده معناه إن قلبك حي.. واللي قلبه حي ربنا بيحب يرجّعه. قول «أستغفر الله» من قلبك، وابدأ من دلوقتي، مش من بكرة."],
+      ["w", "ربنا بيفرح بتوبتك أكتر من فرحة واحد لقى كل حاجة ضاعت منه في الصحرا. تخيّل.. ربنا مستني رجوعك ويفرح بيه."],
+    ] },
+    { id: "need", e: "🤲", name: "محتاج حاجة", kick: "اطلب من ربنا.. هو الكريم 🤍", items: [
+      ["a", "2:186"], ["a", "40:60"], ["a", "27:62"], ["a", "71:10-12"], ["a", "14:7"], ["a", "65:2-3"],
+      ["t", 9], ["t", 10], ["t", 34],
+      ["w", "اللي في قلبك ومكسوف تطلبه من حد، اطلبه من ربنا. هو مابيزهقش من كتر الطلب، بالعكس، بيحب العبد اللي بيلحّ عليه."],
+      ["w", "دعوتك مش هتضيع: يا هتتحقق، يا ربنا هيشيلهالك لحد يوم القيامة، يا هيبعد عنك بيها شر انت ماتعرفوش. فادعي وانت مطمّن."],
+    ] },
+    { id: "happy", e: "😊", name: "مبسوط", kick: "ربنا يديم فرحتك.. ودي ليك 🤍", items: [
+      ["a", "14:7"], ["a", "16:18"], ["a", "93:11"], ["a", "10:58"], ["a", "55:13"], ["a", "27:40"],
+      ["t", 1], ["t", 27], ["t", 37], ["t", 7],
+      ["w", "الحمد لله على الفرحة دي! قولها كتير، لأن ربنا قال «لئن شكرتم لأزيدنكم».. والشكر بيحفظ النعمة ويزوّدها."],
+      ["w", "شارك فرحتك مع حد محتاجها.. ابتسامة، كلمة حلوة، أو صدقة صغيرة. الفرحة بتكبر لما تتقسم."],
+    ] },
+  ];
+
   // ---------------- هديتك اليوم: one gift a day on the home screen ----------------
   // A wrapped gift that opens (shake → light → card) on today's message: an ayah or a dua — nothing else.
   // A different one every day for a whole year (365+, no repeat), in a random order of its own on every phone,
@@ -8352,6 +8816,80 @@ const EVENING_ADHKAR = [
   // more duas from the Quran (beyond QURAN_DUAS)
   var GIFT_QDUAS = ["3:53", "7:151", "11:47", "12:101", "23:29", "26:169", "28:16", "28:21", "29:30", "37:100", "54:10", "3:9", "66:11", "40:7-8", "3:192"];
   var STORE_GIFT = "athar4-gift";
+  // ---- the gift is a message to the one holding the phone: a word to them first, the ayah or the dua, then a dua for them ----
+  // the first line, by kind (ayah / dua / a word)
+  var GIFT_HELLO_A = ["الآية دي ليك النهارده، اقرأها على مهلك 🤍", "رسالة ليك من كتاب الله 📖", "اقرأها كأنها نازلة ليك دلوقتي 🤍", "خلّي الآية دي معاك طول اليوم ✨",
+    "ربنا بيكلمك في كتابه.. اسمع 🤍", "وقفة صغيرة مع آية، تستاهلها 🌿", "دي هديتك النهارده من القرآن 🎁", "اقرأها مرتين، وفكّر فيها شوية 🤍",
+    "آية تنوّر يومك إن شاء الله ☀️", "يمكن تكون الآية دي هي اللي كنت محتاجها النهارده 🤍"];
+  var GIFT_HELLO_D = ["ادعي بيها النهارده من قلبك 🤲", "دعوة حلوة تقولها النهارده 🤍", "قولها وانت متأكد إن ربنا سامعك 🤲", "خلّي الدعوة دي على لسانك النهارده ✨",
+    "ربنا بيحب يسمع صوتك.. ادعي 🤍", "دعوة صغيرة.. أجرها كبير إن شاء الله 🌿", "قولها في سجودك النهارده 🤲", "هديتك النهارده دعوة، ماتفوّتهاش 🎁"];
+  var GIFT_HELLO_T = ["حديث شريف ليك النهارده 🤍", "من كلام النبي ﷺ.. ليك انت ✨", "اقرأ الحديث ده على مهلك 🌿", "كلمة من النبي ﷺ تطمّن قلبك 🤍"];
+  var GIFT_HELLO_W = ["كلمة ليك النهارده 🤍", "من القلب ليك 💌", "اقرأها، دي ليك انت ✨", "رسالة صغيرة لقلبك 🤍"];
+  // the last line: a dua for the reader
+  var GIFT_FOR_YOU = ["ربنا يجبر بخاطرك جبرًا يليق بكرمه 🤍", "ربنا يسعد قلبك ويريّح بالك 🤍", "ربنا يكتبلك الخير كله ويرضّيك بيه", "ربنا يفرّج همّك ويقضي حاجتك",
+    "ربنا يحفظك ويحفظ اللي بتحبهم", "ربنا يرزقك راحة البال والسكينة", "ربنا يجعل يومك كله بركة ونور", "ربنا يبعد عنك كل سوء ويقرّبك من كل خير",
+    "ربنا يتقبّل منك ويرفع قدرك", "ربنا يشرح صدرك وييسّر أمرك", "ربنا يرزقك من حيث لا تحتسب", "ربنا يجعلك من أهل القرآن وخاصّته",
+    "ربنا يغفر لك ولوالديك", "ربنا يرزقك الفرحة اللي مستنيها", "ربنا يطمّن قلبك على كل اللي شاغلك", "ربنا يثبّت قلبك على دينه",
+    "ربنا يشفيك ويعافيك ويشفي كل مريض عندك", "ربنا يجمعك بحبايبك في الجنة", "ربنا يكفيك شر ما أهمّك", "ربنا يرزقك حسن الخاتمة",
+    "ربنا يجعل القرآن ربيع قلبك ونور صدرك", "ربنا يبارك في عمرك ووقتك ورزقك", "ربنا ما يحرمك لذة القرب منه", "ربنا يجعلك سبب فرحة لكل اللي حواليك"];
+  // kind words, written for the gift (no hadith is quoted word for word in them)
+  var GIFT_WORDS = [
+    "مهما كان اللي شايله في قلبك، ربنا شايفه وعارفه.. وهو أرحم بيك من نفسك. قول «يا رب» وسيبها عليه.",
+    "إنك فتحت التطبيق النهارده عشان تقرب من ربنا، ده في حد ذاته رزق.. ربنا اختارك للحظة دي.",
+    "مافيش دعوة بتضيع. اللي دعيت بيه ولسه ماجاش، يا إما جاي في وقته، يا إما ربنا صرف عنك بيه شر، يا إما متشال لك عنده.",
+    "متستقلّش الحاجة الصغيرة.. آية بتقراها، تسبيحة في الطريق، ابتسامة لحد زعلان.. كلها في ميزانك.",
+    "لو حاسس إنك بعيد، فربنا قريب. خطوة واحدة منك.. والباب مفتوح طول الوقت.",
+    "اللي بتمر بيه دلوقتي مش آخر الحكاية. ربنا قال ﴿ فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ﴾، يسر مش واحد.. ده وعد.",
+    "ارحم نفسك شوية. انت بتحاول، وربنا بيحب اللي بيحاول حتى لو بيقع ويقوم.",
+    "النهارده فرصة جديدة.. صفحة بيضا. ابدأها بـ«بسم الله» وكمّل.",
+    "افتكر حد بتحبه وادعيله دلوقتي في سرّك.. الدعوة بظهر الغيب هدية مايعرفش هو مين اللي بعتها.",
+    "قلبك ده أمانة.. املاه بالقرآن والذكر، هتلاقيه أهدى وأخف.",
+    "لو مقصّر، ماتيأسش. ربنا بيفرح بتوبة عبده، وانت لسه قدامك وقت.",
+    "الحمد لله على اللي جه، والحمد لله على اللي ماجاش.. ربنا أعلم باللي يصلح لك.",
+    "صلاتك هي الموعد اللي عمره ما بيتلغي.. ربنا مستنيك فيها خمس مرات كل يوم.",
+    "ماتقارنش نفسك بحد. ربنا قسم الأرزاق بحكمة، ورزقك مكتوب باسمك ومحدش هياخده.",
+    "الهم اللي بيقعد عليك بالليل، حطّه في سجدة.. السجدة بتشيل اللي ماحدش يقدر يشيله.",
+    "انت أغلى من إنك تضيّع يومك في زعل.. قوم اتوضّى وصلّي ركعتين، هتحس بالفرق.",
+    "كل مرة بتقول «أستغفر الله» بصدق، ربنا بيمسح وبينوّر.. قولها دلوقتي.",
+    "ربنا مابيكلّفش نفس إلا وسعها.. يعني اللي عليك دلوقتي، انت قده بإذن الله.",
+    "حتى لو محدش شايف تعبك، ربنا شايف. ومافيش حاجة عنده بتضيع.",
+    "اقرأ ولو صفحة واحدة النهارده.. القليل الدايم أحب لربنا من الكتير اللي بيتقطع.",
+    "إنك لسه بتفكر في ربنا وبتدوّر على القرب منه، ده معناه إن قلبك لسه حي.. حافظ عليه.",
+    "الدنيا مهما طالت قصيرة، والجنة مستنية اللي صبر.. اصبر، العوض جاي.",
+    "ماتشيلش هم بكرة.. ربنا اللي دبّر امبارح هيدبّر بكرة.",
+    "ابتسامتك في وش حد النهارده ممكن تكون هي اللي تغيّر يومه.. وتكون في ميزانك.",
+    "لو والديك عايشين، كلمة حلوة ليهم النهارده باب من أبواب الجنة. ولو سبقوك، دعوة ليهم بتوصلهم نور.",
+    "خلّي بينك وبين ربنا سر حلو.. طاعة صغيرة ماحدش يعرفها غيره.",
+    "مش لازم تبقى كامل عشان تقرب من ربنا.. قرّب وانت زي ما انت، وهو هيصلحك.",
+    "اللي ضاع منك، لو كان خير كان فضل.. ربنا بيشيل من إيدك حاجة عشان يحط مكانها حاجة أحسن.",
+    "خد نفس عميق.. وقول «لا إله إلا الله».. كده انت قلت أعظم كلمة.",
+    "الدعاء مش لازم يكون بكلام كبير.. قول لربنا اللي في قلبك بكلامك انت، هو فاهمك.",
+    "ربنا قال ﴿ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ ﴾.. ثق إن الرضا جاي.",
+    "اللي بيصبر على حاجة عشان ربنا، ربنا بيعوّضه عوض ماكانش في باله.",
+    "كل يوم بتصحى فيه هو رسالة إن ربنا لسه مدّيك فرصة.. استغلها في حاجة تفرّحه.",
+    "لو مضايق من حد، سامحه لوجه الله.. هتريّح قلبك قبل ما تريّحه.",
+    "النية الحلوة بتحوّل الحاجة العادية لعبادة.. انوِ الخير في شغلك وأكلك ونومك.",
+    "ماتستناش تخلص مشاكلك عشان تفرح.. افرح بربنا، وهو هيحل الباقي.",
+    "ربنا اختار لك اسم في السما قبل ما تتولد، ورزقك قبل ما تطلبه.. فاطمّن.",
+    "الذكر بيطمّن القلب، ده مش كلام.. ربنا قال ﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾.",
+    "كفاية إنك عبد لرب كريم.. بيدّي من غير ما تطلب، وبيستر من غير ما تعرف.",
+    "لو النهارده صعب، خلّيه يعدّي بالتسبيح.. «سبحان الله وبحمده» خفيفة على اللسان وتقيلة في الميزان.",
+    "اللي في الجنة مش هيفتكروا تعب الدنيا.. التعب ده هيخلص، والأجر هيفضل.",
+    "قبل ما تنام النهارده، سامح كل الناس، واستغفر، واقرأ آية الكرسي.. ونام وانت مطمّن.",
+    "كل خير عملته النهارده محفوظ، حتى لو نسيته انت.. ربنا مابينساش.",
+    "انت مش لوحدك.. ربنا معاك بعلمه ورحمته في كل لحظة.",
+    "شوية قرآن كل يوم، بيبنوا جواك بيت من النور.. كمّل.",
+    "لو لقيت في قلبك قسوة، اقرأ القرآن بصوت.. وامسح على راس يتيم، وادعي ربنا يليّن قلبك.",
+    "الشكر بيزوّد النعمة.. قول «الحمد لله» على ٣ حاجات حلوة عندك دلوقتي.",
+    "ربنا مابيقفلش باب إلا وبيفتح غيره.. يمكن الباب اللي اتقفل كان هيضرّك.",
+    "خلّي آخر كلامك النهارده ذكر، وأول كلامك بكرة ذكر.. وبينهم يوم كله بركة.",
+    "ماحدش بيدخل الجنة بعمله بس، بندخلها برحمة ربنا.. فاطمع في رحمته وماتيأسش."
+  ];
+  // prayer-only duas (opening, bowing, prostration…) and duas for a set occasion are not messages for a day
+  var GIFT_NOT_MSG = /الاستفتاح|الركوع|الجلسة بين السجدتين|سجود التلاوة|الصلاة على النبي بعد التشهد|بعد السلام من الصلاة|الضيف|على العدو|لقاء العدو|إذا زكي|المريض الذي يئس|إفطار الصائم|أذكار النوم/;
+  function giftDayNum(){ var d = new Date(); return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5); }
+  function giftHello(g){ if (g.hello) return g.hello; var L = g.k === "a" ? GIFT_HELLO_A : g.k === "w" ? GIFT_HELLO_W : g.k === "t" ? GIFT_HELLO_T : GIFT_HELLO_D; return L[giftDayNum() % L.length]; }
+  function giftForYou(){ return GIFT_FOR_YOU[(giftDayNum() * 7) % GIFT_FOR_YOU.length]; }
   function giftRef(r){ var p = r.split(":"), ab = p[1].split("-"); return { s: +p[0], a: [+ab[0], +(ab[1] || ab[0])] }; }
   // a Sunnah text that is a dua said to Allah (the lists also hold sunnahs and virtues, which are not messages)
   var GIFT_IS_DUA = /^(اللهم|رب |ربنا|يا حي|يا مقلب|لا إله إلا أنت|أعوذ بكلمات|حسبي الله|باسمك اللهم|بسم الله أرقيك)/;
@@ -8365,7 +8903,9 @@ const EVENING_ADHKAR = [
     [SUNNAH_DUAS, SUNAN, RUQYAH_SUNNAH, SLEEP_SUNNAH, PRAYER_SUNAN].forEach(function(list){
       list.forEach(function(h){ if (list === SUNNAH_DUAS || GIFT_IS_DUA.test(String(h.text).replace(/[ً-ٰٟ]/g, ""))) out.push({ k: "h", h: h }); });
     });
-    GIFT_HISN.forEach(function(x){ out.push({ k: "b", h: { text: x[1], rep: x[2] } }); });
+    GIFT_HISN.forEach(function(x){ if (!GIFT_NOT_MSG.test(x[0])) out.push({ k: "b", h: { text: x[1], rep: x[2] } }); });
+    GIFT_WORDS.forEach(function(t){ out.push({ k: "w", h: { text: t } }); });
+    GIFT_HADITH.forEach(function(x){ out.push({ k: "t", h: { text: x[0], ref: x[1] } }); });
     // the same text twice (an ayah that is also a Quranic dua, a hadith filed under two titles) is kept once
     var seen = {};
     out = out.filter(function(g){
@@ -8402,15 +8942,67 @@ const EVENING_ADHKAR = [
     return st.last === todayStr() || st.last === dayKey(y) ? (st.streak || 0) : 0;
   }
   function giftOpened(){ return giftState().last === todayStr(); }
-  function giftLabel(g){ return g.k === "a" ? "💌 رسالتك اليوم • آية" : "💌 رسالتك اليوم • دعاء"; }
+  function giftLabel(g){ return g.k === "a" ? "💌 رسالتك اليوم • آية" : g.k === "w" ? "💌 رسالتك اليوم • كلمة ليك" : g.k === "t" ? "💌 رسالتك اليوم • حديث" : "💌 رسالتك اليوم • دعاء"; }
   function giftBodyHtml(g){
+    return '<div class="gift-hello">' + giftHello(g) + '</div>' + giftMsgHtml(g) + '<div class="gift-foryou">' + giftForYou() + '</div>';
+  }
+  function giftMsgHtml(g){
     var rep = g.h && g.h.rep > 1 ? '<div class="gift-ref">× ' + toArabicIndic(g.h.rep) + '</div>' : '';
-    if (g.k === "h") return '<div class="gift-text">«' + g.h.text + '»</div>' + rep + '<div class="gift-ref">' + g.h.ref + '</div>';
+    if (g.k === "h" || g.k === "t") return '<div class="gift-text">«' + g.h.text + '»</div>' + rep + '<div class="gift-ref">' + g.h.ref + '</div>';
+    if (g.k === "w") return '<div class="gift-text gift-word">' + g.h.text + '</div>';
     if (g.k === "b") return '<div class="gift-text">«' + g.h.text + '»</div>' + rep + '<div class="gift-ref">من «حصن المسلم»</div>';
     return '<div class="gift-text gift-quran">' + ruqAyahsHtml(g) + '</div><div class="gift-ref">﴿ ' + ruqRef(g) + ' ﴾</div>';
   }
   function giftPlainText(g){
-    if (g.k === "h") return "«" + g.h.text + "» — " + g.h.ref;
+    return giftHello(g) + "\n\n" + giftMsgText(g) + "\n\n" + giftForYou();
+  }
+  function giftCard(g){
+    var c = { kicker: giftHello(g), foot: giftForYou(), quran: false };
+    if (g.k === "a" || g.k === "q"){ var t = []; for (var a = g.a[0]; a <= g.a[1]; a++) t.push(QURAN_AYAHS[g.s - 1][a - 1]); c.body = "﴿ " + t.join(" ") + " ﴾"; c.ref = ruqRef(g); c.quran = true; }
+    else { c.body = g.k === "w" ? g.h.text : "«" + g.h.text + "»"; c.ref = g.k === "b" ? "حصن المسلم" : g.h.ref || ""; }
+    return c;
+  }
+  // a message for a feeling (GIFT_MOODS): a different one each tap
+  var giftMoodLast = {};
+  function giftMoodPick(m, at){
+    var n = m.items.length, i = at != null ? at % n : Math.floor(Math.random() * n);
+    if (at == null && n > 1 && i === giftMoodLast[m.id]) i = (i + 1) % n;
+    giftMoodLast[m.id] = i;
+    var x = m.items[i], g;
+    if (x[0] === "a"){ var r = giftRef(x[1]); g = { k: "a", s: r.s, a: r.a }; }
+    else if (x[0] === "t"){ var hd = GIFT_HADITH[x[1]]; g = { k: "t", h: { text: hd[0], ref: hd[1] } }; }
+    else if (x[0] === "d") g = { k: "h", h: { text: x[1], ref: x[2] } };
+    else g = { k: "w", h: { text: x[1] } };
+    g.hello = m.kick; g.mood = m; g.mi = i;
+    return g;
+  }
+  // ---- guessing how the reader feels, from what the phone knows: the hour, and how long since the last gift ----
+  // Up at night → a message for a heavy heart; back after days away → a warm welcome and the open door of repentance;
+  // late evening → rest; dawn and Friday morning → gratitude. Otherwise the day's gift. The guess holds all day.
+  function giftDaysAway(){
+    var st = giftState(); if (!st.last) return 0;
+    var p = String(st.last).split("-"), last = new Date(+p[0], +p[1] - 1, +p[2]), now = new Date();
+    return Math.round((new Date(now.getFullYear(), now.getMonth(), now.getDate()) - last) / 864e5);
+  }
+  function giftGuess(){
+    var d = new Date(), h = d.getHours(), away = giftDaysAway();
+    if (away >= 3) return { id: "guilty", kick: "وحشتنا! غبت عننا كام يوم.. ورجوعك فرّحنا 🤍", hint: "وحشتنا! فيه رسالة مستنياك 🤍" };
+    if (h < 4) return { id: giftDayNum() % 2 ? "tight" : "alone", kick: "سهران لحد دلوقتي؟ لو فيه حاجة شاغلاك.. الرسالة دي ليك 🤍", hint: "سهران؟ فيه رسالة ليك 🤍" };
+    if (h >= 22) return { id: "tired", kick: "يومك كان طويل؟ ريّح قلبك بدي قبل ما تنام 🤍", hint: "قبل ما تنام.. رسالة ليك 🌙" };
+    if (h < 7) return { id: "happy", kick: "صاحي بدري؟ ربنا يبارك في يومك 🌅", hint: "صباحك نور.. رسالة ليك 🌅" };
+    if (d.getDay() === 5 && h < 13) return { id: "happy", kick: "جمعة مباركة 🤍 ودي هديتك", hint: "جمعة مباركة.. افتح هديتك 🤍" };
+    return null;
+  }
+  function giftMoodById(id){ return GIFT_MOODS.filter(function(m){ return m.id === id; })[0]; }
+  // today's gift: the guessed one if the gift was opened on a guess, else the day's own
+  function giftCurrent(){
+    var st = giftState(), x = st.mood, m = x && x.day === todayStr() && giftMoodById(x.id);
+    if (!m) return giftToday();
+    var g = giftMoodPick(m, x.i); g.hello = x.kick; return g;
+  }
+  function giftMsgText(g){
+    if (g.k === "w") return g.h.text;
+    if (g.k === "h" || g.k === "t") return "«" + g.h.text + "» — " + g.h.ref;
     if (g.k === "b") return "«" + g.h.text + "» — حصن المسلم";
     var t = ""; for (var a = g.a[0]; a <= g.a[1]; a++) t += QURAN_AYAHS[g.s - 1][a - 1] + " ";
     return "﴿ " + t.trim() + " ﴾ [" + ruqRef(g) + "]";
@@ -8422,22 +9014,26 @@ const EVENING_ADHKAR = [
     var hello = document.querySelector("#view-home .hello-card"); if (!hello) return;
     var card = document.getElementById("giftCard");
     if (!card){ card = document.createElement("button"); card.id = "giftCard"; card.type = "button"; hello.parentNode.insertBefore(card, hello.nextSibling); }
-    var g = giftToday();
+    var g = giftCurrent();
     if (!giftOpened()){
+      var guess = giftGuess();
       card.className = "gift-card-home closed";
-      card.innerHTML = '<span class="gift-emoji">🎁</span><span class="gift-cta"><b>افتح هديتك اليوم</b><small>💌 رسالة ليك مستنياك 🤍' + (giftLiveStreak() > 1 ? ' • ' + toArabicIndic(giftLiveStreak()) + ' أيام متتالية 🔥' : '') + '</small></span><span class="gift-go">افتح</span>';
+      card.innerHTML = '<span class="gift-emoji">🎁</span><span class="gift-cta"><b>افتح هديتك اليوم</b><small>💌 ' + (guess ? guess.hint : 'رسالة ليك مستنياك 🤍') + (giftLiveStreak() > 1 ? ' • ' + toArabicIndic(giftLiveStreak()) + ' أيام متتالية 🔥' : '') + '</small></span><span class="gift-go">افتح</span>';
     } else {
       var prev = g.h ? g.h.text : QURAN_AYAHS[g.s - 1][g.a[0] - 1];
       card.className = "gift-card-home opened";
-      card.innerHTML = '<span class="gift-emoji">✨</span><span class="gift-cta"><b>' + giftLabel(g) + '</b><small class="gift-prev">' + prev + '</small></span><span class="gift-go">اقرأ</span>';
+      card.innerHTML = '<span class="gift-emoji">✨</span><span class="gift-cta"><b>' + (g.mood ? "💌 رسالة ليك النهارده" : giftLabel(g)) + '</b><small class="gift-prev">' + prev + '</small></span><span class="gift-go">اقرأ</span>';
     }
   }
   // ---- opening ----
   var giftAudio = null;
   function openGift(){
-    var first = !giftOpened(), g = giftToday();
+    var first = !giftOpened(), g = giftCurrent();
     if (first){
+      var guess = giftGuess(), gm = guess && giftMoodById(guess.id);
+      if (gm){ g = giftMoodPick(gm); g.hello = guess.kick; }
       var st = giftState();
+      st.mood = gm ? { day: todayStr(), id: gm.id, i: g.mi, kick: guess.kick } : null;
       st.streak = giftLiveStreak() + 1;
       st.total = (st.total || 0) + 1; st.last = todayStr(); saveJSON(STORE_GIFT, st);
       if (window.__wirdiReschedule) window.__wirdiReschedule();   // phone app: drop today's 09:00 gift reminder
@@ -8446,21 +9042,31 @@ const EVENING_ADHKAR = [
     ov.className = "gift-ov" + (first ? " anim" : " shown");
     var sparks = ""; for (var i = 0; i < 14; i++) sparks += '<i style="--a:' + (i * 360 / 14) + 'deg;--d:' + (90 + (i % 3) * 40) + 'px;--t:' + (0.5 + (i % 4) * 0.12) + 's">' + (i % 3 ? "✦" : "✨") + '</i>';
     ov.innerHTML = '<div class="gift-stage"><div class="gift-box">🎁</div><div class="gift-burst"></div><div class="gift-sparks">' + sparks + '</div>' +
-      '<div class="gift-open"><div class="gift-kind">' + giftLabel(g) + '</div>' + giftBodyHtml(g) +
-      '<div class="gift-acts">' + (g.k === "a" || g.k === "q" ? '<button class="btn ghost" data-gift="listen">🔊 استمع</button>' : '') +
-      '<button class="btn ghost" data-gift="share">📤 شارك</button><button class="btn primary" data-gift="close">آمين 🤍</button></div>' +
+      '<div class="gift-open"><div class="gift-main"></div>' +
+      '<div class="gift-moods"><div class="gift-mq">💭 مش دي حالتك؟ اختار انت وتجيلك رسالة على قدّك</div><div class="gift-mrow">' +
+      GIFT_MOODS.map(function(m){ return '<button type="button" class="gift-mood" data-gift="mood" data-m="' + m.id + '">' + m.e + ' ' + m.name + '</button>'; }).join("") + '</div></div>' +
       '<div class="gift-foot">هديتك الجاية بكرة إن شاء الله</div></div></div>';
     document.body.appendChild(ov);
+    var draw = function(){
+      if (giftAudio) giftAudio.pause();
+      ov.querySelector(".gift-main").innerHTML = '<div class="gift-kind">' + (g.picked ? g.mood.e + " رسالة ليك • " + g.mood.name : g.mood ? "💌 رسالة ليك النهارده" : giftLabel(g)) + '</div>' + giftBodyHtml(g) +
+        '<div class="gift-acts">' + (g.k === "a" || g.k === "q" ? '<button class="btn ghost" data-gift="listen">🔊 استمع</button>' : '') +
+        '<button class="btn ghost" data-gift="share">📤 شارك</button><button class="btn primary" data-gift="close">آمين 🤍</button></div>';
+      ov.querySelectorAll(".gift-mood").forEach(function(b){ b.classList.toggle("on", !!g.mood && b.getAttribute("data-m") === g.mood.id); });
+    };
+    draw();
     if (first) setTimeout(function(){ ov.classList.add("pop"); }, 1100);
     ov.addEventListener("click", function(e){
       var b = e.target.closest("[data-gift]");
       if (!b){ if (e.target === ov && ov.classList.contains("pop") || e.target === ov && ov.classList.contains("shown")) closeGift(ov); return; }
       var a = b.getAttribute("data-gift");
       if (a === "close") closeGift(ov);
-      else if (a === "share"){
+      else if (a === "mood"){
+        var m = GIFT_MOODS.filter(function(x){ return x.id === b.getAttribute("data-m"); })[0];
+        if (m){ g = giftMoodPick(m); g.picked = true; draw(); var box = ov.querySelector(".gift-open"); if (box) box.scrollTop = 0; }
+      } else if (a === "share"){
         var txt = giftPlainText(g) + "\n\n🎁 من تطبيق أَثَر";
-        if (navigator.share) navigator.share({ text: txt }).catch(function(){});
-        else (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){ showToast("اتنسخت ✓ ابعتها لحد بتحبه"); }, function(){});
+        shareSheet(txt, giftCard(g));
       } else if (a === "listen"){
         if (giftAudio && !giftAudio.paused){ giftAudio.pause(); b.textContent = "🔊 استمع"; return; }
         if (typeof stopQuranAudio === "function") stopQuranAudio();
@@ -8491,6 +9097,11 @@ const EVENING_ADHKAR = [
   // her card → the prayer → the greeting and today's gift → the reading cards → the shortcuts.
   var STORE_ATHAR = "athar4-prayed";
   function atharCount(){ try { return +localStorage.getItem(STORE_ATHAR) || 0; } catch(e){ return 0; } }
+  // a dua from the cards as a picture (v4/share.js): «… [الإسراء: ٢٤]» → the words and their source
+  function atharShareDua(d, kicker){
+    var m = String(d).match(/^([\s\S]*?)\s*\[([^\[\]]+)\]$/), body = m ? m[1] : d, ref = m ? m[2] : "";
+    shareSheet(kicker + "\n\n" + d + "\n\nاللهم آمين 🤍", { kicker: kicker, body: body, ref: ref, quran: /[ۡۖۚ]/.test(body), foot: "اللهم آمين 🤍" });
+  }
   function atharCountText(n){ return n ? "دعوتَ لها " + (n === 1 ? "مرة" : n === 2 ? "مرتين" : toArabicIndic(n) + (n <= 10 ? " مرات" : " مرة")) + " — جزاك الله خيرًا 🤍" : "كل دعوة ليها نور في قبرها 🤍"; }
   (function(){
     var home = document.getElementById("view-home");
@@ -8506,7 +9117,11 @@ const EVENING_ADHKAR = [
       '<div class="ac-sub">رحمها الله • هذا التطبيق صدقة جارية عنها</div>' +
       '<div class="ac-dua" id="acDua">' + DUA_AMIRA[i] + '</div>' +
       '<button class="ac-btn" id="acPray" type="button">🤲 آمين</button>' +
+      '<button class="ac-share" id="acShare" type="button">📤 شارك الدعاء صورة</button>' +
       '<div class="ac-count" id="acCount">' + atharCountText(atharCount()) + '</div>';
+    card.querySelector("#acShare").addEventListener("click", function(){
+      atharShareDua(DUA_AMIRA[i], "🤲 ادعُ لسعدية أمين مهنى — رحمها الله");
+    });
     card.querySelector("#acPray").addEventListener("click", function(){
       var n = atharCount() + 1;
       try { localStorage.setItem(STORE_ATHAR, String(n)); } catch(e){}
@@ -8520,6 +9135,50 @@ const EVENING_ADHKAR = [
     var after = document.getElementById("installTip") || home.querySelector(".topbar");
     var order = [card, document.getElementById("prayerCard"), document.getElementById("helloCard")];
     order.forEach(function(n){ if (n && after){ after.insertAdjacentElement("afterend", n); after = n; } });
+  })();
+
+  // ---------------- «أثر»: a dua for Mohamed Ibrahim Ali (alive — may Allah keep him) ----------------
+  // Under her card: his name, a dua for the living (the Quran's duas for parents and duas for health, a long life in
+  // obedience and a good end) and «آمين», counted on this phone apart from hers.
+  var DUA_DAD = [
+    "﴿ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا ﴾ [الإسراء: ٢٤]",
+    "اللهم احفظه بحفظك، واكلأه برعايتك، وأطِل عمره في طاعتك",
+    "﴿ رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ ﴾ [إبراهيم: ٤١]",
+    "اللهم ألبسه ثوب الصحة والعافية، واشفه شفاءً لا يغادر سقمًا",
+    "اللهم بارك له في عمره وصحته ورزقه، وأقرّ عينه بأولاده وأحبّته",
+    "﴿ رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ﴾ [نوح: ٢٨]",
+    "اللهم متّعه بسمعه وبصره وقوّته ما أحييته، ولا تُحوجه لأحد سواك",
+    "اللهم اشرح صدره، وأسعد قلبه، وفرّج همّه، واقضِ حاجته",
+    "اللهم اجعله من أهل القرآن الذين هم أهلك وخاصّتك",
+    "اللهم أحسن خاتمته، واجعل خير أيامه يوم لقائك",
+    "اللهم اغفر له ذنبه، وطهّر قلبه، واجعل له نورًا في الدنيا والآخرة",
+    "اللهم كن له عونًا ونصيرًا، ولا تكِله إلى نفسه طرفة عين",
+    "اللهم اجزه عن أولاده خير الجزاء، واجعل تعبه عليهم في ميزان حسناته",
+    "اللهم اجمعه بأحبّته في الفردوس الأعلى من غير حساب ولا سابقة عذاب"
+  ];
+  var STORE_DAD = "athar4-dad-prayed";
+  (function(){
+    var her = document.getElementById("atharCard");
+    if (!her || document.getElementById("dadCard")) return;
+    var j = Math.floor(Date.now() / 3600000) % DUA_DAD.length;
+    var count = function(){ try { return +localStorage.getItem(STORE_DAD) || 0; } catch(e){ return 0; } };
+    var countText = function(n){ return n ? "دعوتَ له " + (n === 1 ? "مرة" : n === 2 ? "مرتين" : toArabicIndic(n) + (n <= 10 ? " مرات" : " مرة")) + " 🤍" : "ادعُ له بظهر الغيب، والملك يقول: ولك بمثل 🤍"; };
+    var card = document.createElement("div");
+    card.className = "athar-dad"; card.id = "dadCard";
+    card.innerHTML = '<div class="ad-head"><span class="ad-name">محمد إبراهيم علي</span><span class="ad-sub">حفظه الله وبارك في عمره</span></div>' +
+      '<div class="ad-dua" id="adDua">' + DUA_DAD[j] + '</div>' +
+      '<div class="ad-row"><span class="ad-count" id="adCount">' + countText(count()) + '</span><span class="ad-acts"><button class="ad-sh" id="adShare" type="button" aria-label="شارك الدعاء صورة">📤</button><button class="ad-btn" id="adPray" type="button">🤲 آمين</button></span></div>';
+    card.querySelector("#adShare").addEventListener("click", function(){ atharShareDua(DUA_DAD[j], "🤲 ادعُ لمحمد إبراهيم علي — حفظه الله"); });
+    card.querySelector("#adPray").addEventListener("click", function(){
+      var n = count() + 1;
+      try { localStorage.setItem(STORE_DAD, String(n)); } catch(e){}
+      document.getElementById("adCount").textContent = countText(n);
+      var el = document.getElementById("adDua");
+      el.classList.add("swap");
+      setTimeout(function(){ j = (j + 1) % DUA_DAD.length; el.textContent = DUA_DAD[j]; el.classList.remove("swap"); }, 220);
+      showToast("تقبّل الله دعاءك، وحفظه 🤍");
+    });
+    her.insertAdjacentElement("afterend", card);
   })();
 
   // ---------------- «أثر»: its own way around — a tab bar at the bottom of the home screen ----------------
@@ -9410,6 +10069,29 @@ const EVENING_ADHKAR = [
   }
   // the bridge is normally ready before this script; if it arrives a little later, start on load
   if (window.__wirdiNative) wnInit(); else window.addEventListener("load", function(){ if (wnIsNative()) wnInit(); });
+
+  // ---------------- the phone's back button (native app) ----------------
+  // Back closes what is open on top (a sheet, a window, the gift), then goes back a screen, and on the home
+  // screen two presses within two seconds leave the app — one press alone only says how to leave.
+  (function(){
+    var C = window.Capacitor, App = C && C.Plugins && C.Plugins.App;
+    if (!C || !C.isNativePlatform || !C.isNativePlatform() || !App || !App.addListener) return;
+    document.documentElement.classList.add("wn-app");
+    var lastBack = 0;
+    App.addListener("backButton", function(){
+      if (document.getElementById("ptSheet")){ ptSheetClose(); return; }
+      var gift = document.querySelector(".gift-ov");
+      if (gift){ closeGift(gift); return; }
+      var modals = [].filter.call(document.querySelectorAll(".modal-overlay"), function(m){ return !m.hidden && getComputedStyle(m).display !== "none"; });
+      if (modals.length){ var m = modals[modals.length - 1]; if (m.id) m.hidden = true; else m.remove(); return; }
+      if (history.state){ history.back(); return; }     // a sheet or a home tab opened with its own history step
+      if (currentView !== "home"){ goBack(); return; }
+      var now = Date.now();
+      if (now - lastBack < 2000){ App.exitApp(); return; }
+      lastBack = now;
+      showToast("اضغط رجوع مرة كمان للخروج");
+    });
+  })();
 
   ///WIRDI4-JS
   // ============================================================
