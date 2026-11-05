@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-7zq0CNXIycJH51wKk0499KNATbIp4h0cvVOh+1PrvKA='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-2dpgRjC/oyVnpfvjzaO+2kWShNmCFT7mnrctbz4h7gE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://verses.quran.com; img-src 'self' data: blob:; media-src 'self' data: blob: https://media.way2quran.com https://archive.org https://*.archive.org https://cdn.mp3quran.net https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://suwaidan.com; connect-src 'self' https://www.mp3quran.net https://cdn.mp3quran.net https://api.quran.com https://api.aladhan.com https://fonts.googleapis.com https://fonts.gstatic.com https://everyayah.com https://verses.quran.com https://mirrors.quranicaudio.com https://server14.mp3quran.net https://audio.islamweb.net https://archive.org https://*.archive.org https://media.way2quran.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>أَثَر - القرآن الكريم والأذكار</title>
@@ -704,8 +704,10 @@
   /* tajweed edition: the font carries its own colours (no stroke, which would paint over them) */
   .mushaf-page.m15 .ml-tajweed .ml .ayah-text{-webkit-text-stroke:0; color:#1A140A;}
   /* "red" look: heavy black letters, tashkeel in red (two layers of the same word, see mushaf15.js) */
-  .mushaf-page.m15 .ml-red .ml .ml-rw{position:relative; color:#E1251B; -webkit-text-stroke:0.02em #E1251B;}
-  .mushaf-page.m15 .ml-red .ml .ml-rw::after{content:attr(data-b); position:absolute; top:0; right:0; color:#140F06; -webkit-text-stroke:0.034em #140F06; pointer-events:none;}
+  /* the red layer (letters + marks) sits a little inside the black letters drawn over it, so no red edge shows
+     around the letters on small screens (that edge made the text look shaky / doubled) — only the marks stay red */
+  .mushaf-page.m15 .ml-red .ml .ml-rw{position:relative; color:#E1251B; -webkit-text-stroke:0.006em #E1251B;}
+  .mushaf-page.m15 .ml-red .ml .ml-rw::after{content:attr(data-b); position:absolute; top:0; right:0; color:#140F06; -webkit-text-stroke:0.046em #140F06; pointer-events:none;}
   .mushaf-page.m15 .ml-red .ml .ml-end{color:#9A7424;}
   .ml-style-row{display:flex; gap:6px; margin-top:10px;}
   .ml-style-row button{flex:1; padding:8px 4px; border-radius:12px; border:1px solid #D9C48A; background:transparent; font:inherit; font-size:0.78rem; font-weight:700; color:inherit;}
@@ -1044,19 +1046,21 @@
   html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
   html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
+  :root{--sab:max(var(--sab), var(--safe-area-inset-bottom, 0px));}
+  html.wn-app{--sab:max(12px, var(--sab), var(--safe-area-inset-bottom, 0px));}
   :root{--sab:max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));}
   html.wn-app{--sab:max(12px, env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));}
 
   /* ---- «أثر» ---- */
-  .athar-card{position:relative; margin:4px 16px 14px; padding:22px 18px 16px; border-radius:26px; text-align:center; overflow:hidden;
-    background:linear-gradient(160deg,#F9E3EF 0%,#EFD9F0 55%,#E3D3F3 100%); border:1px solid #E7C8DD; box-shadow:0 10px 30px rgba(120,50,100,.12); color:#4A2440;}
+  .athar-card{position:relative; margin:0 0 12px; padding:12px 14px 10px; border-radius:20px; text-align:center; overflow:hidden;
+    background:linear-gradient(160deg,#F9E3EF 0%,#EFD9F0 55%,#E3D3F3 100%); border:1px solid #E7C8DD; box-shadow:0 6px 18px rgba(120,50,100,.10); color:#4A2440;}
   .athar-card::before{content:""; position:absolute; inset:auto -40px -60px auto; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.45);}
-  .ac-flower{font-size:2rem; line-height:1;}
-  .ac-name{font-family:"Amiri",serif; font-size:1.7rem; font-weight:700; margin-top:6px; color:#6E3460;}
-  .athar-dad{margin:-4px 16px 14px; padding:14px 16px 12px; border-radius:22px; background:linear-gradient(160deg,#FFF7FB,#F6ECF7); border:1px solid #E7C8DD; box-shadow:0 6px 18px rgba(120,50,100,.08); color:#4A2440;}
+  .ac-flower{font-size:1rem; line-height:1;} .ac-flower svg{width:34px; height:26px;}
+  .ac-name{font-family:"Amiri",serif; font-size:1.3rem; font-weight:700; margin-top:2px; line-height:1.3; color:#6E3460;}
+  .athar-dad{margin:0 0 12px; padding:10px 14px 10px; border-radius:22px; background:linear-gradient(160deg,#FFF7FB,#F6ECF7); border:1px solid #E7C8DD; box-shadow:0 6px 18px rgba(120,50,100,.08); color:#4A2440;}
   .ad-head{display:flex; align-items:baseline; justify-content:space-between; gap:8px; flex-wrap:wrap;}
   .ad-name{font-family:"Amiri",serif; font-size:1.3rem; font-weight:700; color:#6E3460;} .ad-sub{font-size:.8rem; color:#8E5F80;}
-  .ad-dua{margin-top:8px; font-family:"Amiri",serif; font-size:1.08rem; line-height:1.85; max-height:9em; overflow-y:auto; transition:opacity .22s ease, transform .22s ease;}
+  .ad-dua{margin-top:4px; font-family:"Amiri",serif; font-size:1rem; line-height:1.75; max-height:5.25em; overflow-y:auto; transition:opacity .22s ease, transform .22s ease;}
   .ad-dua.swap{opacity:0; transform:translateY(4px);}
   .ad-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px;}
   .ad-count{font-size:.78rem; color:#8E5F80;}
@@ -1064,17 +1068,17 @@
   .ad-btn:active{transform:scale(.97);}
   .ad-acts{display:flex; gap:6px; flex:none;}
   .ad-sh{border:1px solid #E7C8DD; background:#fff; border-radius:99px; width:40px; height:38px; font-size:1.05rem; cursor:pointer;}
-  .ac-share{position:relative; display:block; margin:10px auto 0; border:1px solid #E7C8DD; background:rgba(255,255,255,.7); color:#6E3460; border-radius:99px; padding:7px 18px; font:inherit; font-size:.88rem; font-weight:800; cursor:pointer;}
+  .ac-share{position:relative; display:inline-block; vertical-align:middle; margin:8px 6px 0 0; border:1px solid #E7C8DD; background:rgba(255,255,255,.7); color:#6E3460; border-radius:99px; padding:6px 14px; font:inherit; font-size:.86rem; font-weight:800; cursor:pointer;}
   :root[data-theme="dark"] .ac-share, :root[data-theme="dark"] .ad-sh{background:#2B1D31; border-color:#3E2B47; color:#F2B8DD;}
   :root[data-theme="dark"] .athar-dad{background:linear-gradient(160deg,#2B1D31,#24182A); border-color:#3E2B47; color:#F3E7F0;}
   :root[data-theme="dark"] .ad-name{color:#F2B8DD;} :root[data-theme="dark"] .ad-sub, :root[data-theme="dark"] .ad-count{color:#C9AFC2;}
-  .ac-sub{font-size:.88rem; color:#8E5F80; margin-top:2px;}
-  .ac-dua{position:relative; margin:14px auto 0; max-width:30em; font-family:"Amiri",serif; font-size:1.18rem; line-height:1.9; color:#3A2233; max-height:11.4em; overflow-y:auto; overscroll-behavior:contain; transition:opacity .22s ease, transform .22s ease;}
+  .ac-sub{font-size:.74rem; color:#8E5F80; margin-top:1px;}
+  .ac-dua{position:relative; margin:6px auto 0; max-width:30em; font-family:"Amiri",serif; font-size:1.02rem; line-height:1.75; color:#3A2233; max-height:5.25em; overflow-y:auto; overscroll-behavior:contain; transition:opacity .22s ease, transform .22s ease;}
   .ac-dua.swap{opacity:0; transform:translateY(6px);}
-  .ac-btn{position:relative; margin-top:14px; border:none; border-radius:99px; padding:10px 34px; font-size:1.05rem; font-weight:800; color:#fff;
-    background:linear-gradient(135deg,#B0578F,#7B4FC9); box-shadow:0 8px 20px rgba(123,79,201,.25);}
+  .ac-btn{position:relative; vertical-align:middle; margin-top:8px; border:none; border-radius:99px; padding:6px 24px; font-size:.92rem; font-weight:800; color:#fff;
+    background:linear-gradient(135deg,#B0578F,#7B4FC9); box-shadow:0 4px 12px rgba(123,79,201,.22);}
   .ac-btn:active{transform:scale(.97);}
-  .ac-count{position:relative; margin-top:10px; font-size:.85rem; color:#8E5F80;}
+  .ac-count{position:relative; margin-top:5px; font-size:.72rem; color:#8E5F80;}
   :root[data-theme="dark"] .athar-card{background:linear-gradient(160deg,#3A2140,#2C1E3D); border-color:#4E3358; color:#F3E7F0;}
   :root[data-theme="dark"] .athar-card::before{background:rgba(255,255,255,.04);}
   :root[data-theme="dark"] .ac-name{color:#F2B8DD;} :root[data-theme="dark"] .ac-dua{color:#F3E7F0;}
@@ -7370,7 +7374,7 @@ const EVENING_ADHKAR = [
   setInterval(function(){ ptRefresh(); checkPrayerReminders(); }, 30000);
   // Android keeps the app alive in the background, so a new deploy only shows after a real restart:
   // on coming back, ask the site for its build stamp and reload if it is newer (never mid-recitation)
-  var WIRDI_BUILD = "98fe930099df", verChecked = 0;
+  var WIRDI_BUILD = "59a3e2b047d7", verChecked = 0;
   function wirdiAudioBusy(){
     var list = [].slice.call(document.querySelectorAll("audio"));
     if (typeof quranPlayers !== "undefined") list = list.concat(quranPlayers);
@@ -9513,6 +9517,45 @@ const EVENING_ADHKAR = [
       qcfLoad(todo.shift()).then(function(){ qcfAheadT = setTimeout(next, 250); });
     };
     qcfAheadT = setTimeout(next, 400);
+  }
+  // the coloured / black looks: a few seconds after the app opens, the fonts of the last page read (its neighbours,
+  // and the bookmark) are loaded, so opening the mushaf shows the real page at once — not a stand-in page that is
+  // redrawn a moment later (after the first time the files come from the phone's own cache, sw.js)
+  setTimeout(function(){
+    if (!mushaf15On() || mushafStyle() === "red") return;
+    var list = [], add = function(p){ if (p >= 1 && p <= 604) qcfPages(p).forEach(function(x){ if (!qcfState[qcfFam(x)] && list.indexOf(x) === -1) list.push(x); }); };
+    var last = +loadJSON(STORE_MUSHAF_PAGE, 1) || 1;
+    add(last); add(last + 1); add(last - 1); add(mqBookmark());
+    var next = function(){ if (list.length) qcfLoad(list.shift()).then(function(){ setTimeout(next, 150); }); };
+    next();
+  }, 2500);
+  // ---- turning a page (replaces the first version of mushafGoTo, which faded the page out for 200 ms, then drew
+  // the new one, then faded it in: about half a second per page) — the new page is drawn at once and slides in.
+  // On the coloured / black looks, if the page's fonts are not here yet, it waits for them a moment (at most
+  // 0.7 s) instead of drawing a stand-in page that is redrawn right after.
+  var mlTurnAsk = 0;
+  function mushafGoTo(newPage, dir){
+    newPage = clamp(newPage, 1, 604);
+    if (newPage === mushafPageNum) return;
+    cancelQueueIfSurahLeft(newPage);
+    var ask = ++mlTurnAsk, el = document.getElementById("mushafPageContent");
+    var draw = function(){
+      if (ask !== mlTurnAsk) return;   // a newer turn came first
+      mushafPageNum = newPage;
+      renderMushafPage();
+      el.classList.remove("turn-next", "turn-prev");
+      var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (el.animate && !still){
+        try { el.animate([{ transform: "translateX(" + (dir > 0 ? 26 : -26) + "px)", opacity: 0.45 }, { transform: "none", opacity: 1 }], { duration: 170, easing: "ease-out" }); } catch(e){}
+      }
+    };
+    if (mushaf15On() && mushafStyle() !== "red" && !qcfReady(newPage)){
+      var done = false, go = function(){ if (!done){ done = true; draw(); } };
+      Promise.all(qcfPages(newPage).map(function(x){ return qcfLoad(x); })).then(go);
+      setTimeout(go, 700);
+      return;
+    }
+    draw();
   }
   function mushaf15Html(p){
     if (!mushaf15On()) return null;
